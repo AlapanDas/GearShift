@@ -9,7 +9,15 @@ module.exports = {
       'alert': '#f6511d',
       'notif': '00a6ed'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        'ultralight': ['"San Francisco Display Ultralight"', 'sans-serif'],
+        'thin': ['"San Francisco Display Thin"', 'sans-serif'],
+        'medium': ['"San Francisco Display Medium"', 'sans-serif'],
+        'semibold': ['"San Francisco Display Semibold"', 'sans-serif'],
+        'bold': ['"San Francisco Display Bold"', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }
