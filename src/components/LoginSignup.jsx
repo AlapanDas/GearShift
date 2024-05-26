@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGoogle, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import "../assets/styles/loginSignup.css";
+import { Link,BrowserRouter } from 'react-router-dom';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 function LoginSignup() {
 
@@ -16,6 +18,7 @@ function LoginSignup() {
 
   return (
     <>
+      <BrowserRouter><Link to="/"><div id='back-to-home'><FontAwesomeIcon icon={faArrowLeftLong} />   Back to Home</div></Link></BrowserRouter>
       <div className="container" id="container">
         <div className="form-container sign-up-container">
           <form>
