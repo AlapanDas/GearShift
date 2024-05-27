@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
      return (
           <button
                onClick={toggleDarkMode}
-               className="p-2 w-10 transition ease-in-out duration-150 rounded-full bg-primary dark:bg-onprimary text-white dark:text-primary"
+               className="p-2 w-10 transition ease-in-out duration-150 rounded-full bg-black dark:bg-onprimary text-white dark:text-black ml-7"
           >
                {isDarkMode ? <i className="transition ease-in-out duration-150 fa-regular fa-sun"></i> : <i className="transition ease-in-out duration-150 fa-solid fa-moon"></i>}
           </button>

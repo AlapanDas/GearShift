@@ -12,8 +12,7 @@ function App() {
   return (
     <>
      <Header/>
-     <div>Hello world</div>
-    <Footer/>
+     <Footer/>
     </>
   );
 }
