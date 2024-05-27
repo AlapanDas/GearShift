@@ -2,15 +2,6 @@ import React from 'react';
 
 function LoginSignup() {
 
-  const signupWindow = () => {
-    const container = document.getElementById('container');
-    container.classList.add("right-panel-active");
-  }
-  const signinWindow = () => {
-    const container = document.getElementById('container');
-    container.classList.remove("right-panel-active");
-  }
-
   return (
     <>
       <div className="flex flex-col md:flex-row justify-center bg-onprimary dark:bg-primary">
