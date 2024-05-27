@@ -2,12 +2,12 @@ import React from "react";
 
 function Logout(){
     return (
-        <div className="flex  flex-1 flex-col  px-4  py-12 lg:px-8">
-            <h3 className="text-base font-semibold leading-7 text-gray-900">Log Out</h3>
+        <div className="flex  flex-1 flex-col  px-4  py-12 my-4  lg:px-8 rounded-2xl  dark:bg-black">
+            <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">Log Out</h3>
         <div className="mt-10  sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
                 Email address
               </label>
               <div className="mt-2">
@@ -24,11 +24,11 @@ function Logout(){
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a href="/" className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-secondary">
                     Forgot password?
                   </a>
                 </div>
@@ -48,7 +48,7 @@ function Logout(){
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
               >
                 Sign out
               </button>
