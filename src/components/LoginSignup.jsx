@@ -1,6 +1,19 @@
-import React from 'react';
+
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
 
 function LoginSignup() {
+
+  const [showPasswordSignIn,setShowPasswordSignIn] = useState(false);
+  const [showPasswordSignUp,setShowPasswordSignUp] = useState(false);
+
+  const showSignInPassword = ()=>{
+    setShowPasswordSignIn(!showPasswordSignIn);
+  }
+  const showSignUpPassword = ()=>{
+    setShowPasswordSignUp(!showPasswordSignUp);
+  }
 
   return (
     <>
@@ -19,7 +32,7 @@ function LoginSignup() {
           </div>
 
           <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="bg-white dark:bg-primary dark:shadow-onprimary dark:shadow-2xl py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <div className="bg-white dark:bg-primary dark:shadow-onprimary dark:shadow-lg py-8 px-4 shadow sm:rounded-lg sm:px-10">
               <form className="space-y-5">
                 <div>
                   <label htmlFor="username" className="block text-sm font-medium text-primary dark:text-onprimary">
@@ -27,7 +40,7 @@ function LoginSignup() {
                   </label>
                   <div className="mt-1">
                     <input id="name-signin" name="name" type='text' autoComplete="name" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your username" />
                   </div>
                 </div>
@@ -37,7 +50,7 @@ function LoginSignup() {
                   </label>
                   <div className="mt-1">
                     <input id="email-signin" name="email" type="email" autoComplete="email" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your email address" />
                   </div>
                 </div>
@@ -46,10 +59,11 @@ function LoginSignup() {
                   <label htmlFor="password" className="block text-sm font-medium text-primary dark:text-onprimary">
                     Password
                   </label>
-                  <div className="mt-1">
-                    <input id="password-signin" name="password" type="password" autoComplete="current-password" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                  <div className="mt-1 relative">
+                    <input id="password-signin" name="password" type={!showPasswordSignIn ? "password" : "text"} autoComplete="current-password" required
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your password" />
+                    {!showPasswordSignIn ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white' onClick={showSignInPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white' onClick={showSignInPassword}></FontAwesomeIcon>}
                   </div>
                 </div>
 
@@ -71,7 +85,7 @@ function LoginSignup() {
 
                 <div>
                   <button type="submit"
-                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-notif dark:bg-onprimary dark:text-primary hover:shadow-lg">
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-notif dark:bg-onprimary dark:text-primary hover:shadow-lg dark:hover:bg-notif dark:hover:text-white">
                     Sign in
                   </button>
                 </div>
@@ -128,7 +142,7 @@ function LoginSignup() {
           </div>
 
           <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 dark:bg-primary dark:shadow-onprimary dark:shadow-2xl">
+            <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 dark:bg-primary dark:shadow-onprimary dark:shadow-lg">
               <form className="space-y-5">
                 <div>
                   <label htmlFor="username" className="block text-sm font-medium text-primary dark:text-onprimary">
@@ -136,7 +150,7 @@ function LoginSignup() {
                   </label>
                   <div className="mt-1">
                     <input id="name-signup" name="name" type='text' autoComplete="name" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your username" />
                   </div>
                 </div>
@@ -146,7 +160,7 @@ function LoginSignup() {
                   </label>
                   <div className="mt-1">
                     <input id="email-signup" name="email" type="email" autoComplete="email" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your email address" />
                   </div>
                 </div>
@@ -155,16 +169,17 @@ function LoginSignup() {
                   <label htmlFor="password" className="block text-sm font-medium text-primary dark:text-onprimary">
                     Password
                   </label>
-                  <div className="mt-1">
-                    <input id="password-signup" name="password" type="password" autoComplete="current-password" required
-                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-onprimary focus:outline-notif focus:ring-notif focus:border-notif focus:z-10 sm:text-sm dark:bg-primary dark:border-onprimary"
+                  <div className="mt-1 relative">
+                    <input id="password-signup" name="password" type={!showPasswordSignUp ? "password" : "text"} autoComplete="current-password" required
+                      className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your password" />
+                    {!showPasswordSignUp ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white' onClick={showSignUpPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white' onClick={showSignUpPassword}></FontAwesomeIcon>}
                   </div>
                 </div>
 
                 <div>
                   <button type="submit"
-                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-notif dark:bg-onprimary dark:text-primary hover:shadow-lg">
+                    className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-notif dark:bg-onprimary dark:text-primary hover:shadow-lg dark:hover:bg-notif dark:hover:text-white">
                     Sign Up
                   </button>
                 </div>
