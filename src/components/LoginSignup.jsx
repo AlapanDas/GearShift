@@ -63,7 +63,7 @@ function LoginSignup() {
                     <input id="password-signin" name="password" type={!showPasswordSignIn ? "password" : "text"} autoComplete="current-password" required
                       className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your password" />
-                    {!showPasswordSignIn ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white' onClick={showSignInPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white' onClick={showSignInPassword}></FontAwesomeIcon>}
+                    {!showPasswordSignIn ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white hover:cursor-pointer' onClick={showSignInPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white hover:cursor-pointer' onClick={showSignInPassword}></FontAwesomeIcon>}
                   </div>
                 </div>
 
@@ -173,7 +173,7 @@ function LoginSignup() {
                     <input id="password-signup" name="password" type={!showPasswordSignUp ? "password" : "text"} autoComplete="current-password" required
                       className="appearance-none rounded-md relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-primary dark:text-onprimary focus:outline-notif focus:ring-notif focus:border-notif sm:text-sm dark:bg-primary dark:border-onprimary"
                       placeholder="Enter your password" />
-                    {!showPasswordSignUp ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white' onClick={showSignUpPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white' onClick={showSignUpPassword}></FontAwesomeIcon>}
+                    {!showPasswordSignUp ? <FontAwesomeIcon icon={faEyeSlash} className='absolute right-3 top-3 dark:text-white hover:cursor-pointer' onClick={showSignUpPassword}></FontAwesomeIcon> : <FontAwesomeIcon icon={faEye} className='absolute right-3 top-3 dark:text-white hover:cursor-pointer' onClick={showSignUpPassword}></FontAwesomeIcon>}
                   </div>
                 </div>
 
