@@ -6,13 +6,15 @@ import Card from './components/Cards';
 import data from './assets/data.json';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HomeBody from './components/HomeBody';
 
 function App() {
 
   return (
     <>
-     {/* <Header/>
-     <Footer/> */}
+      {/* <Header/>
+      <HomeBody/> 
+      <Footer/> */}
     </>
   );
 }
