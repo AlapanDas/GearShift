@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer
-      className="bg-onprimary dark:text-white dark:bg-primary transition ease-in-out duration-150 mt-[170px] text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+      className="bg-onprimary dark:text-white dark:bg-gray transition ease-in-out duration-150 mt-[170px] text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">

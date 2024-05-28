@@ -11,7 +11,8 @@ module.exports = {
       'alert': '#a41623',
       'notif': '#3454d1',
       'black': '#000',
-      'white': '#fff'
+      'white': '#fff',
+      'gray' : '#272927'
     },
     extend: {
       fontFamily: {
