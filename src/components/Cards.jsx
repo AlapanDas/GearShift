@@ -29,10 +29,10 @@ export default function Card({ Data }) {
                                              initial={{ opacity: 0, scale: 0.95 }}
                                              animate={{ opacity: 1, scale: 1 }}
                                              exit={{ opacity: 0, scale: 0.95 }}
-                                             className=" relative max-w-4xl space-y-4 bg-white p-8 rounded-custom shadow-custom dark:bg-primary dark:text-white"
+                                             className=" relative max-w-xl space-y-4 bg-onprimary p-8 rounded-custom shadow-custom dark:bg-primary dark:text-white"
                                         >
-                                             <button className='absolute top-4 left-4' onClick={() => setIsOpen(false)}>{'<-'}</button>
-                                             <div className='flex gap-2 p-2 opacity-70'>
+                                             <button className='absolute top-4 left-4' onClick={() => setIsOpen(false)}>{'👈'}</button>
+                                             <div className='flex gap-2 p-2 '>
                                                   <div className='grid grid-rows-2 gap-2'>
                                                        <div className='dark:bg-onprimary bg-primary rounded-xl row-span-2'>
                                                             <img width={300} src={car} alt="" />
@@ -42,7 +42,7 @@ export default function Card({ Data }) {
                                                        </div>
                                                   </div>
                                                   <div className='grid grid-rows-2 gap-1'>
-                                                       <div className='text-lg font-semibold p-6 row-span-2 dark:bg-onprimary bg-primary rounded-xl dark:text-primary text-onprimary '>
+                                                       <div className='text-lg sm:text-sm font-semibold p-6 row-span-2 dark:bg-onprimary bg-primary rounded-xl dark:text-primary text-onprimary '>
                                                             <p>Name :{carData.name}</p>
                                                             <p>Brand :{carData.brand}</p>
                                                             <p>Fuel Type :{carData.fueltype}</p>
