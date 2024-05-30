@@ -8,13 +8,27 @@ import HomeBody from "./components/HomeBody";
 import Header from './components/Header';
 import Footer from "./components/Footer"
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeBody />,
+  },
+  {
+    path: "/cards",
+    element: <App />,
+  },
+]);
 function App() {
 
   return (
     <>
-      <Header/>
+      {/* <Header/>
       <HomeBody/>
-      <Footer/>
+      <Footer/> */}
     </>
   );
 }

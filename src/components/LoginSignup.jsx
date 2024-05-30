@@ -25,7 +25,7 @@ function LoginSignup() {
             </h2>
             {/* <p className="mt-1 text-center text-sm max-w">
               Or<br/> 
-              <a href="#" className="font-medium text-primary hover:text-notif">
+              <a href="/#" className="font-medium text-primary hover:text-notif">
                 create an account
               </a>
             </p> */}
@@ -77,7 +77,7 @@ function LoginSignup() {
                   </div>
 
                   <div className="text-sm">
-                    <a href="#" className="font-medium text-alert dark:text-onprimary">
+                    <a href="/#" className="font-medium text-alert dark:text-onprimary">
                       Forgot your password?
                     </a>
                   </div>
@@ -103,21 +103,21 @@ function LoginSignup() {
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/512120/facebook-176.svg"
                         alt="facebook" />
                     </a>
                   </div>
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/513008/twitter-154.svg"
                         alt="twitter" />
                     </a>
                   </div>
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/506498/google.svg"
                         alt="google" />
@@ -135,7 +135,7 @@ function LoginSignup() {
             </h2>
             {/* <p className="mt-1 text-center text-sm max-w">
               Or<br/> 
-              <a href="#" className="font-medium text-primary hover:text-notif">
+              <a href="/#" className="font-medium text-primary hover:text-notif">
                 create an account
               </a>
             </p> */}
@@ -197,21 +197,21 @@ function LoginSignup() {
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/512120/facebook-176.svg"
                         alt="facebook" />
                     </a>
                   </div>
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/513008/twitter-154.svg"
                         alt="twitter" />
                     </a>
                   </div>
                   <div>
-                    <a href="#"
+                    <a href="/#"
                       className="w-full flex items-center justify-center px-8 py-3 border border-primary rounded-md shadow-sm text-sm font-medium text-primary bg-white hover:bg-onprimary">
                       <img className="h-5 w-5" src="https://www.svgrepo.com/show/506498/google.svg"
                         alt="google" />
