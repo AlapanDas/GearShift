@@ -24,7 +24,7 @@ const Header = () => {
         <i className={open? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
         </div>
   
-        <ul className={`lg:flex lg:items-center dark:bg-gray lg:pb-0 pb-12 absolute lg:static bg-white lg:z-auto left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 ${open ? 'top-20 ':'top-[-490px]'}`}>
+        <ul className={`lg:flex lg:items-center dark:bg-gray lg:pb-0 pb-12 absolute z-50 lg:static bg-white lg:z-auto left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 ${open ? 'top-20 ':'top-[-490px]'}`}>
           {
             Links.map((link)=>(
               <li key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
