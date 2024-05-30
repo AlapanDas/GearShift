@@ -7,18 +7,18 @@ const HomeBody = () => {
   return (
     <>
     <div className='flex flex-col dark:bg-primary'>
-      <div className=' h-auto flex flex-col-reverse sm:flex-row items-stretch justify-between transition ease-in-out duration-150'>
-        <div className=' w-full sm:w-[45%] flex items-center flex-col gap-6 h-auto'>
+      <div className='h-auto flex flex-col-reverse sm:flex-row items-stretch justify-between transition ease-in-out duration-150'>
+        <div className=' w-full mt-10 ml-[15%] sm:w-[45%] flex flex-left flex-col sm:flex-col h-auto'>
           <div className=' h-[30%] w-[60%] mt-[13%] flex items-center justify-center'>
             <h1 className='text-5xl font-bold dark:text-white transition ease-in-out duration-150'>Discover Your <span className='text-notif h-auto'>Dream</span> Car</h1>
           </div>
-          <div className='p-2 mr-[160px]'>
-            <button className='bg-notif text-white p-2.5 font-semibold rounded-md shadow-xl sm:shadow-xl active:scale-95 hover:opacity-[90%] ml-5'>
+          <div className='position-relative mt-10 sm:mt-20 lg:mt-10'>
+            <button className='bg-notif mb-10 text-white p-2.5 font-semibold rounded-md shadow-xl sm:shadow-xl active:scale-95 hover:opacity-[90%]'>
               Explore Now
             </button>
           </div>
         </div>
-        <div className=' w-full sm:w-[50%]'>
+        <div className=' w-full mt-10 mr-5 sm:w-[50%]'>
           <img src={carImg} alt="car" />
         </div>
       </div>
