@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 const Header = () => {
-    let Links =[
-        {name:"Home",link:"/"},
-        {name:"About",link:"/"},
-        {name:"Car Service",link:"/"},
-        {name:"Contact",link:"/"},
-      ];
-      let [open,setOpen]=useState(false);
+  let Links = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "/" },
+    { name: "Car Service", link: "/" },
+    { name: "Contact", link: "/" },
+  ];
+  let [open, setOpen] = useState(false);
   return (
       <div className='shadow-md dark:shadow-md w-full top-0 left-0'>
         <div className='lg:flex items-center justify-between bg-white py-4 lg:px-10 px-7 dark:bg-gray transition ease-in-out duration-150'>
@@ -35,10 +35,10 @@ const Header = () => {
           <Button>
             Sign Up / Login
           </Button>
-          <DarkModeToggle/>
+          <DarkModeToggle />
         </ul>
-        </div>
       </div>
+    </div>
 
   )
 }

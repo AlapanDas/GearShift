@@ -12,3 +12,6 @@
 main{
      background-color: black;
 }
+body{
+     background-attachment: fixed;
+}
