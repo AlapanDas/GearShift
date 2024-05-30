@@ -26,7 +26,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      {/* <Header/>
+      <HomeBody/>
+      <Footer/> */}
     </>
   );
 }
