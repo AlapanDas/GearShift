@@ -67,7 +67,7 @@ export default function Card({ Data }) {
                     <div className='border border-primary mx-4 bg-onprimary dark:bg-primary  w-64  h-min  shadow-custom rounded-t-custom'>
                          <div>
                               <div className="image p-3 ">
-                                   <img src={car} alt="Car" />
+                                   <img src={carData.image} alt="Car" />
                               </div>
                          </div>
                     </div>
