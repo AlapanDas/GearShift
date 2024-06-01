@@ -6,7 +6,7 @@ import Card from './components/Cards';
 import LoginSignup from './components/LoginSignup';
 import HomeBody from "./components/HomeBody";
 import Header from './components/Header';
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 import {
   createBrowserRouter,
@@ -26,9 +26,11 @@ function App() {
 
   return (
     <>
-      {/* <Header/>
-      <HomeBody/>
-      <Footer/> */}
+      {/* <Header/> */}
+      {/* <HomeBody/> */}
+      {/* <Card Data={CarData}/> */}
+      {/* <Footer/> */}
+      {/* <SectionData/> */}
     </>
   );
 }
