@@ -6,7 +6,7 @@ function UserAddress(){
     const [show,setshow]=React.useState(false);
 
     return(
-        <div className="py-20 px-4 my-4 rounded-2xl dark:bg-black">
+        <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-black">
           {!show && 
           <div className="px-4 sm:px-0">
            <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">User Address</h3>
@@ -36,7 +36,7 @@ function UserAddress(){
             </dl>
             <button
               type="submit"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
+              className=" bg-btncol rounded-lg  px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
               onClick={()=>{
                 setshow(true)
               }}
@@ -132,13 +132,13 @@ function UserAddress(){
              </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm font-semibold leading-6 text-gray-900 dark:text-secondary dark:bg-primary ">
+          <div className="mt-6 flex items-center justify-end gap-x-6 ">
+        <button type="button" className="text-sm px-3 py-2 font-semibold leading-6 bg-btncol rounded-lg text-gray-900 dark:text-secondary dark:bg-primary ">
           Cancel
         </button>
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
+          className="bg-btncol rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
           onClick={()=>{
             setshow(false)
           }}
