@@ -37,7 +37,7 @@ const Header = () => {
               </li>
             ))
           }
-          {user.isloggedIn ?
+          {user.isLoggedIn ?
             <Button>
               <a href="/login">
                 Account

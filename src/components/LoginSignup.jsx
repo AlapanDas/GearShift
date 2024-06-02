@@ -40,7 +40,7 @@ function LoginSignup() {
     const username = document.getElementById('name-signin').value;
     const password = document.getElementById('password-signin').value;
     const email = document.getElementById('email-signin').value;
-    fetch('http://localhost:8000/signin', {
+    fetch('https://gearshift-backend.onrender.com/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function LoginSignup() {
     const username = document.getElementById('name-login').value;
     const password = document.getElementById('password-login').value;
 
-    fetch('http://localhost:8000/login', {
+    fetch('https://gearshift-backend.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
