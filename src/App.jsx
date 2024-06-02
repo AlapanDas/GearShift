@@ -15,8 +15,10 @@ function App() {
           <SectionData/>
 
         </div>
-      </div>*/}
+      </div>
+      <RouterProvider router={router} />*/}
       <RouterProvider router={router} />
+      
     </>
   );
 }
