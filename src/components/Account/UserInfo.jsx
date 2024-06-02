@@ -2,7 +2,7 @@ import React from "react";
 
 function UserInfo(){
     return (
-        <div className="py-20 px-4 my-4 rounded-2xl dark:bg-black">
+        <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-black ">
          <div className="px-4 sm:px-0">
           <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">User Information</h3>
          </div>
