@@ -42,14 +42,14 @@ function Orders(){
    
     return (
         
-        <div className="py-20 my-4 px-4 rounded-2xl dark:bg-black" >
+        <div className="py-20 my-4 px-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-black" >
          <div className="px-4 sm:px-0">
           <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">My Orders</h3>
          </div>
 
          <div className="mx-auto mt-10 flex flex-col max-w-2xl   gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none dark:border-white">
           {posts.map((post) => (
-            <article key={post.id} className="flex max-w-xl flex-col items-start justify-between dark:text-secondary">
+            <article key={post.id} className="flex max-w-xl flex-col items-start justify-between  dark:text-secondary">
               <div className="flex items-center gap-x-4 text-xs">
                 <h3>{post.category.title}</h3>
               </div>
@@ -74,10 +74,10 @@ function Orders(){
                     </a>
                   </p>
                   <p className="text-gray-600">{post.author.modelno}</p>
-                  {post.category.title==="Not Purchased" && <div>
+                  {post.category.title==="Not Purchased" && <div className="bg-btncol rounded-lg  dark:bg-primary ">
                   <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
+          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary"
         >
           Buy Now
         </button>

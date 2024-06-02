@@ -12,7 +12,8 @@ module.exports = {
       'notif': '#3454d1',
       'black': '#000',
       'white': '#fff',
-      'gray' : '#272927'
+      'gray' : '#272927',
+      'btncol': '#7AB2B2'
     },
     extend: {
       fontFamily: {

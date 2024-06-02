@@ -2,7 +2,7 @@ import React from "react";
 
 function Logout(){
     return (
-        <div className="flex  flex-1 flex-col  px-4  py-12 my-4  lg:px-8 rounded-2xl  dark:bg-black">
+        <div className="flex  flex-1 flex-col  px-4  py-12 my-4  lg:px-8 rounded-2xl mx-5 mb-7 max-sm:mx-7 bg-onprimary dark:bg-black">
             <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">Log Out</h3>
         <div className="mt-10  sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
@@ -45,7 +45,7 @@ function Logout(){
               </div>
             </div>
 
-            <div>
+            <div className="bg-btncol rounded-lg">
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
