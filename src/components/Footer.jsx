@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer
-      className="bg-onprimary dark:text-white dark:bg-gray transition ease-in-out duration-150 mt-[170px] text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+      className="bg-onprimary dark:text-white dark:bg-gray transition ease-in-out duration-150 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
@@ -78,7 +78,7 @@ const Footer = () => {
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
       <div className="mx-6 py-10 text-center md:text-left">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* <!-- TW Elements section --> */}
           <div className="">
             <h6
@@ -100,6 +100,7 @@ const Footer = () => {
             </p>
           </div>
           {/* <!-- Products section --> */}
+          <div className='md:flex md:justify-around max-md:flex max-md:flex-row max-md:justify-center max-md:gap-[75px] flex flex-row gap-[200px]'>
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -145,8 +146,9 @@ const Footer = () => {
               >Help</a>
             </p>
           </div>
+          </div>
           {/* <!-- Contact section --> */}
-          <div>
+          <div className='lg:ml-[100px]'>
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
               Contact
@@ -212,7 +214,7 @@ const Footer = () => {
         <span>© 2024 Copyright : </span>
         <a
           className="font-semibold text-neutral-600 dark:text-neutral-400"
-          href="https://tw-elements.com/"
+          href="#GearShift"
         >GearShift</a>
       </div>
     </footer>

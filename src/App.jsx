@@ -6,8 +6,7 @@ import Card from './components/Cards';
 import LoginSignup from './components/LoginSignup';
 import HomeBody from "./components/HomeBody";
 import Header from './components/Header';
-import Footer from "./components/Footer";
-import data from "./assets/carData.json";
+import Footer from "./components/Footer"
 
 import {
   createBrowserRouter,
@@ -27,11 +26,9 @@ function App() {
 
   return (
     <>
-    {/* <HomeBody/> */}
       {/* <Header/>
       <HomeBody/>
       <Footer/> */}
-      <Card Data = {data}/>
     </>
   );
 }
