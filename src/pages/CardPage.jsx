@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Cards'
+import Card from '../components/Cards'
 import data from '../assets/data.json'
 export default function CardPage() {
   return (
