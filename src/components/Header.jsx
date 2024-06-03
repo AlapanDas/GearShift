@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   let Links = [
@@ -12,7 +12,6 @@ const Header = () => {
   ];
   let [open, setOpen] = useState(false);
   const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
   return (
     <div className='shadow-md dark:shadow-md w-full top-0 left-0'>
       <div className='lg:flex items-center justify-between bg-white py-4 lg:px-10 px-7 dark:bg-gray transition ease-in-out duration-150'>
@@ -21,7 +20,9 @@ const Header = () => {
           <span className='text-3xl mr-5 pt-2'>
             <i className="fa-solid fa-car-side dark:text-white"></i>
           </span>
-          GearShift
+          <a href="/">
+            GearShift
+          </a>
         </div>
 
         <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
@@ -36,7 +37,7 @@ const Header = () => {
               </li>
             ))
           }
-          {user.username ?
+          {user.isLoggedIn ?
             <Button>
               <a href="/login">
                 Account
