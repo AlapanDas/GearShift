@@ -20,7 +20,7 @@ export default function Login() {
           const username = document.getElementById('name-login').value;
           const password = document.getElementById('password-login').value;
 
-          fetch('https://gearshift-backend.onrender.com/login', {
+          fetch('https://gearshift-backend.onrender.com/user/login', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json',

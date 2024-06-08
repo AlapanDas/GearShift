@@ -15,7 +15,7 @@ export default function SignUp() {
           const username = document.getElementById('name-signin').value;
           const password = document.getElementById('password-signin').value;
           const email = document.getElementById('email-signin').value;
-          fetch('https://gearshift-backend.onrender.com/signin', {
+          fetch('https://gearshift-backend.onrender.com/user/signin', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json',

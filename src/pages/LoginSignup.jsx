@@ -43,7 +43,7 @@ function LoginSignup() {
             <Login />}
         </div>
       }
-      <a href="/signin"><div className="text-center py-1 text-primary dark:text-onprimary mx-auto md:flex-row justify-center bg-onprimary dark:bg-primary">Don't have an account? Create One !!</div></a>
+      <a href="/signup"><div className="text-center py-1 text-primary dark:text-onprimary mx-auto md:flex-row justify-center bg-onprimary dark:bg-primary">Don't have an account? Create One !!</div></a>
     </>
   )
 }
