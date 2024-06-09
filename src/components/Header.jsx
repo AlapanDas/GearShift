@@ -14,7 +14,7 @@ const Header = () => {
   const user = useSelector((state) => state.user);
   return (
     <div className='shadow-md dark:shadow-md w-full top-0 left-0'>
-      <div className='lg:flex items-center justify-between bg-white py-4 lg:px-10 px-7 dark:bg-gray transition ease-in-out duration-150'>
+      <div className='lg:flex items-center justify-between bg-white py-4 lg:px-10 px-7 dark:bg-gray transition ease-in-out duration-150 filter blur-md sticky'>
         <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
           <span className='text-3xl mr-5 pt-2'>

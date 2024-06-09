@@ -26,6 +26,7 @@ function App() {
 
   return (
     <>
+    <HomeBody/>
       {/* <Header/>
       <HomeBody/>
       <Footer/> */}
