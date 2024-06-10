@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           path: "/accounts",
           element: <AccountPage />,
           errorElement: <FourOFour />
-     }
+     },
 ]);
 
 export default router;

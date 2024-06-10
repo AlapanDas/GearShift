@@ -7,7 +7,7 @@ import Orders from "./Orders";
 
 function SectionData() {
   return (
-    <div>
+    <div >
       <Logout />
       <UserInfo />
       <UserAddress />
