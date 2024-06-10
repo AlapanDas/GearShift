@@ -1,4 +1,5 @@
-[
+{
+    "cars":[
     {
      "Column1": 0,
      "price": 6300,
@@ -29,7 +30,7 @@
      "state": "tennessee",
      "country": "usa",
      "condition": "6 days left",
-     "image": "https:\/\/www.motortrend.com\/uploads\/sites\/10\/2015\/09\/2011-ford-focus-front-three-quarter.jpg?fit=around%7C875:492"
+     "image": "https:\\www.motortrend.com\/uploads\/sites\/10\/2015\/09\/2011-ford-focus-front-three-quarter.jpg?fit=around%7C875:492"
     },
     {
      "Column1": 2,
@@ -783,4 +784,5 @@
      "condition": "2 days left",
      "image": "https:\/\/65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com\/ldm-images\/2019-Jeep-Cherokee-Granite-Crystal-Metallic-Clear-Coat-Color.jpg"
     }
-   ]
+    ]
+}

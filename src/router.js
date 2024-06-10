@@ -1,33 +1,39 @@
-import Accounts from './components/Account/Accounts';
-import SectionList from './components/Account/Sections';
-import SectionData from './components/Account/SectionData';
-import LoginSignup from './components/LoginSignup';
-import HomeBody from "./components/HomeBody";
+import LoginSignup from './pages/LoginSignup';
+import HomeBody from "./pages/HomeBody";
+import { createBrowserRouter } from "react-router-dom";
 
-
-import {
-     createBrowserRouter,
-     RouterProvider,
-} from "react-router-dom";
-import About from './components/About';
-import CardPage from './components/CardPage';
+import CardPage from './pages/CardPage';
+import AccountPage from './pages/AccountPage';
+import FourOFour from './pages/FourOFour';
 
 const router = createBrowserRouter([
      {
           path: "/",
           element: <HomeBody />,
+          errorElement: <FourOFour />
      },
      {
           path: "/cards",
           element: <CardPage />,
-     },
-     {
-          path: "/about",
-          element: <About />
+          errorElement: <FourOFour />
      },
      {
           path: "/login",
-          element: <LoginSignup />
+          element: <LoginSignup />,
+          errorElement: <FourOFour />
+     },
+     // {
+     //      path: "/accounts",
+     //      element: <AccountPage />
+     // },
+     // {
+     //      path: "/signin",
+     //      element: <SignUp />
+     // },
+     {
+          path: "/accounts",
+          element: <AccountPage />,
+          errorElement: <FourOFour />
      }
 ]);
 

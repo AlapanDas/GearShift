@@ -47,7 +47,31 @@ const userSlice = createSlice({
         },
         setOrders: (state, action) => {
             state.orders = action.payload;
-        }
+        },
+        deleteUser(state){
+            state.isLoggedIn = false;
+            state.username = ""
+            state.fullname =""
+            state.address = ""
+            state.city = ""
+            state.email = ""
+            state.number = null
+            state.orders = ""
+            state.pincode = null
+            state.state = ""
+        },
+        setUser(state, action) {
+            state.isLoggedIn = true;
+            state.username = action.payload.username;
+            state.fullname = action.payload.fullname;
+            state.address = action.payload.address;
+            state.city = action.payload.city;
+            state.email = action.payload.email;
+            state.number = action.payload.number;
+            state.orders = action.payload.orders;
+            state.pincode = action.payload.pincode;
+            state.state = action.payload.state;
+        },
     }
 });
 
@@ -61,7 +85,9 @@ export const {
     setState,
     setCity,
     setPincode,
-    setOrders
+    setOrders,
+    setUser,
+    deleteUser
 } = userSlice.actions;
 
 export default userSlice.reducer;
