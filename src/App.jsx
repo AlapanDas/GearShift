@@ -1,4 +1,5 @@
 import './App.css';
+import HomeBody from './pages/HomeBody';
 import router from './router';
 
 import { RouterProvider } from "react-router-dom";
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <>
+      <HomeBody/>
       {/*
       <div>
         <Accounts/>
@@ -17,7 +19,7 @@ function App() {
         </div>
       </div>
       <RouterProvider router={router} />*/}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       
     </>
   );
