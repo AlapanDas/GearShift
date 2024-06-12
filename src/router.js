@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import CardPage from './pages/CardPage';
 import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
+import About from './pages/About';
 
 const router = createBrowserRouter([
      {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
      {
           path: "/accounts",
           element: <AccountPage />,
+          errorElement: <FourOFour />
+     },
+     {
+          path: "/about",
+          element: <About />,
           errorElement: <FourOFour />
      }
 ]);
