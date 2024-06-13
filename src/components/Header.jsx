@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
@@ -36,8 +37,9 @@ const Header = () => {
   useEffect(() => {
     const userCookie = Cookies.get('user_data');
     // Searches for Cookie(jwt)
-    if (userCookie) {
-       userObject = JSON.parse(userCookie);
+    if (userCookie && userCookie !== "undefined") {
+      console.log(userCookie, typeof userCookie)
+      userObject = JSON.parse(userCookie);
       const arrayToken = userObject.split('.');
       const tokenPayload = JSON.parse(atob(arrayToken[1]))
       console.log(tokenPayload);
@@ -54,48 +56,46 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky z-50'>
-      <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
-        <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+      <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky z-50'>
+        <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
+          <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
-          <span className='text-3xl mr-5 pt-2'>
-            <i className="fa-solid fa-car-side dark:text-white"></i>
-          </span>
-          <a href="/">
-            GearShift
-          </a>
-        </div>
-        <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
-          <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
-        </div>
-  
-        <ul className={`max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18':'top-[-490px]'}`}>
-          {
-            Links.map((link) => (
-              <li key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
-                <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
-              </li>
-            ))
-          }
-          {setlogin ?
-            <a href="/accounts">
-              <Button>
-                {user.fullname || userObject.username}
-              </Button>
+            <span className='text-3xl mr-5 pt-2'>
+              <i className="fa-solid fa-car-side dark:text-white"></i>
+            </span>
+            <a href="/">
+              GearShift
             </a>
-            :
-            <a href="/login">
-              <Button>
-                Sign Up / Login
-              </Button>
-            </a>
-          }
+          </div>
+          <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
+            <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
+          </div>
+          <ul className={`max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18' : 'top-[-490px]'}`}>
+            {
+              Links.map((link) => (
+                <li key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
+                  <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
+                </li>
+              ))
+            }
+            {setlogin ?
+              <a href="/accounts">
+                <Button>
+                  {user.fullname || userObject.username}
+                </Button>
+              </a>
+              :
+              <a href="/login">
+                <Button>
+                  Sign Up / Login
+                </Button>
+              </a>
+            }
 
-          <DarkModeToggle />
-        </ul>
+            <DarkModeToggle />
+          </ul>
+        </div>
       </div>
-    </div>
-
   )
 }
 
