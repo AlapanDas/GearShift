@@ -4,6 +4,10 @@ import FilterEngine from '../components/FilterEngine';
 
 const HomeBody = () => {
 
+  const ClickAtFilter = (data)=>{
+    console.log(data);
+  }
+
   return (
     <>
       <div className='flex flex-col dark:bg-primary'>
@@ -23,7 +27,7 @@ const HomeBody = () => {
           </div>
 
         </div>
-        <FilterEngine/> 
+        <FilterEngine whenClick={ClickAtFilter}/> 
       </div>
     </>
   )

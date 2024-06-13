@@ -1,6 +1,5 @@
 import './App.css';
 import router from './router';
-
 import { RouterProvider } from "react-router-dom";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       </div>
       <RouterProvider router={router} />*/}
       <RouterProvider router={router} />
-      
     </>
   );
 }

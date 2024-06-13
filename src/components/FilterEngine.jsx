@@ -2,7 +2,7 @@ import React,{ useState } from 'react'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function FilterEngine() {
+function FilterEngine(props) {
 
     const [Data, setData] = useState({
         brand: "",
@@ -42,7 +42,7 @@ function FilterEngine() {
                     credentials: 'include',
                 })
                 let data = await response.json()
-                console.log(data)
+                props.whenClick(data);
             } catch (error) {
                 console.log(error)
             }
