@@ -54,7 +54,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky'>
+    <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky z-50'>
       <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
         <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
