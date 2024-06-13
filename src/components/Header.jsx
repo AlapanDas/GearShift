@@ -10,7 +10,7 @@ import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrd
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/" },
+    { name: "About", link: "/about" },
     { name: "Car Service", link: "/" },
     { name: "Contact", link: "/" },
   ];
@@ -54,8 +54,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='shadow-md dark:shadow-md w-full top-0 left-0'>
-      <div className='lg:flex items-center justify-between bg-white py-4 lg:px-10 px-7 dark:bg-gray transition ease-in-out duration-150'>
+    <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky'>
+      <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
         <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
           <span className='text-3xl mr-5 pt-2'>
@@ -69,7 +69,7 @@ const Header = () => {
           <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
         </div>
   
-        <ul className={`max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-auto left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18':'top-[-490px]'}`}>
+        <ul className={`max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18':'top-[-490px]'}`}>
           {
             Links.map((link) => (
               <li key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
