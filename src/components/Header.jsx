@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-// import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig'
-
 
 
 const Header = () => {
@@ -55,8 +54,10 @@ const Header = () => {
     }
   }, []);
 
-  return (
-      <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky z-50'>
+
+  return(
+      <Router>
+      <div className='shadow-md dark:shadow-md w-full top-0 left-0  right-0 sticky z-50'>
         <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
           <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
@@ -96,6 +97,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
+      </Router>
   )
 }
 
