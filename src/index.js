@@ -12,9 +12,9 @@ import Footer from './components/Footer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <Header />
+    <Header/>
     <App/>
-    <Footer />
+    <Footer/>
   </Provider>
 );
 

@@ -1,16 +1,22 @@
 import React from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
+import CarSlider from '../components/CarSlider';
+
+
 
 const HomeBody = () => {
-
-  const ClickAtFilter = (data)=>{
+  
+  const ClickAtFilter = (data) => {
     console.log(data);
   }
 
   return (
     <>
       <div className='flex flex-col dark:bg-primary'>
+
+        <CarSlider/>
+
         <div className='h-auto flex flex-col sm:flex-row items-stretch justify-between transition ease-in-out duration-150'>
           <div className=' w-auto mt-10 mr-5 sm:w-[50%]'>
             <img src={carImg} alt="car" />
@@ -27,7 +33,9 @@ const HomeBody = () => {
           </div>
 
         </div>
-        <FilterEngine whenClick={ClickAtFilter}/> 
+
+        <FilterEngine whenClick={ClickAtFilter} />
+        
       </div>
     </>
   )

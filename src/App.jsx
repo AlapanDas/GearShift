@@ -16,7 +16,8 @@ function App() {
         </div>
       </div>
       <RouterProvider router={router} />*/}
-      <RouterProvider router={router} />
+
+      <RouterProvider router={router}/>
     </>
   );
 }
