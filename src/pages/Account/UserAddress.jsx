@@ -119,7 +119,10 @@ function UserAddress() {
               </div>
 
               <div className="mt-6 flex items-center justify-end gap-x-6 ">
-                <button type="button" className="text-sm px-3 py-2 font-semibold leading-6 bg-btncol rounded-lg text-gray-900 dark:text-white dark:bg-darkbgbtn ">
+                <button type="button" className="text-sm px-3 py-2 font-semibold leading-6 bg-btncol rounded-lg text-gray-900 dark:text-white dark:bg-darkbgbtn "
+                 onClick={() => {
+                  setshow(false)
+                }}>
                   Cancel
                 </button>
                 <button
