@@ -7,12 +7,50 @@ function UserAddress() {
   const [show, setshow] = React.useState(false);
   function change() {
     setshow(true);
-    const address=document.getElementById("address")
-    const city=document.getElementById("city")
-    const state=document.getElementById("state")
-    const zip=document.getElementById("zip")
-    
   }
+
+  async function handleChange(event){
+    event.preventDefault()
+    const email=user.email
+    const address=document.getElementById("address").value;
+    const city=document.getElementById("city").value;
+    const state=document.getElementById("state").value;
+    const zip=document.getElementById("zip").value;
+    console.log(email)
+    console.log(address)
+    console.log(city)
+    console.log(state)
+    console.log(zip)
+    
+    fetch('https://gearshift-backend.onrender.com/user/update_details',{
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json',
+   },
+   body: JSON.stringify({
+    email:email,
+    address: address,
+    city: city,
+    state: state,
+    zip:zip
+   }),
+   credentials: 'include',
+    })
+    .then((response) => response.json())
+    .then((data)=>{
+      console.log("Form updated:")
+    })
+    .then(()=>{
+      setshow(false)
+    })
+    .catch((error)=>{
+      console.log("eroor:",error)
+    });
+
+  }
+
+
+
   return (
     <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-darkbg">
       {!show &&
@@ -24,6 +62,12 @@ function UserAddress() {
                 <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Address</dt>
                 <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">
                   {user.address}
+                </dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Email</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">
+                  {user.email}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -53,7 +97,7 @@ function UserAddress() {
       {show &&
         <div className="px-4 sm:px-0">
           <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">Add Address</h3>
-          <form>
+          <form onSubmit={handleChange} >
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
@@ -127,10 +171,7 @@ function UserAddress() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-btncol rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white dark:bg-darkbgbtn "
-                  onClick={() => {
-                    setshow(false)
-                  }}
+                  className="bg-btncol rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white dark:bg-darkbgbtn "  
                 >
                   Save
                 </button>
