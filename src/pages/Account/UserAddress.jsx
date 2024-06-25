@@ -1,9 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { setAddress,setCity,setState,setPincode } from "../../user/userconfig";
 
 
 function UserAddress() {
   const user = useSelector((state) => state.user);
+  const dispatch =useDispatch()
   const [show, setshow] = React.useState(false);
   function change() {
     setshow(true);
@@ -16,11 +18,6 @@ function UserAddress() {
     const city=document.getElementById("city").value;
     const state=document.getElementById("state").value;
     const zip=document.getElementById("zip").value;
-    console.log(email)
-    console.log(address)
-    console.log(city)
-    console.log(state)
-    console.log(zip)
     
     fetch('https://gearshift-backend.onrender.com/user/update_details',{
       method:'POST',
@@ -32,13 +29,17 @@ function UserAddress() {
     address: address,
     city: city,
     state: state,
-    zip:zip
+    zip: Number(zip)
    }),
    credentials: 'include',
     })
     .then((response) => response.json())
     .then((data)=>{
       console.log("Form updated:")
+      dispatch(setAddress(data.data.address))
+      dispatch(setCity(data.data.city))
+      dispatch(setState(data.data.state))
+      dispatch(setPincode(data.data.pincode))
     })
     .then(()=>{
       setshow(false)
