@@ -8,13 +8,14 @@ import LoginSignup from './LoginSignup';
 export default function AccountPage() {
   const user = useSelector((state) => state.user);
   if (!Cookies.get('user_data'))
-    window.location.href="/"
-    return (
-      <>{Cookies.get('user_data') || user.username ?
-        <div className='py-4 dark:bg-black'><SectionData/></div>:
-        <div>
-        </div>
-      }
-      </>
-    )
+    window.location.href = "/"
+  return (
+    <>{Cookies.get('user_data') || user.username ?
+      <div className='py-4 dark:bg-black'><SectionData /></div> :
+      <div>
+      </div>
+    }
+
+    </>
+  )
 }

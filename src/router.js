@@ -1,7 +1,7 @@
 import LoginSignup from './pages/LoginSignup';
 import HomeBody from "./pages/HomeBody";
 import { createBrowserRouter } from "react-router-dom";
-
+import Result from './pages/Result'
 import CardPage from './pages/CardPage';
 import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
@@ -41,6 +41,11 @@ const router = createBrowserRouter([
                {
                     path: "about",
                     element: <About />,
+                    errorElement: <FourOFour />
+               },
+               {
+                    path: "result",
+                    element: <Result />,
                     errorElement: <FourOFour />
                },
 ]);

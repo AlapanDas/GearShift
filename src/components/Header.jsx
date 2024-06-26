@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom';
+// import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
@@ -8,6 +10,7 @@ import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrd
 
 
 const Header = () => {
+  // const navigate=useNavigate();
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
@@ -37,11 +40,11 @@ const Header = () => {
     const userCookie = Cookies.get('user_data');
     // Searches for Cookie(jwt)
     if (userCookie && userCookie !== "undefined") {
-      console.log(userCookie, typeof userCookie)
+      // console.log(userCookie, typeof userCookie)
       userObject = JSON.parse(userCookie);
       const arrayToken = userObject.split('.');
       const tokenPayload = JSON.parse(atob(arrayToken[1]))
-      console.log(tokenPayload);
+      // console.log(tokenPayload);
       setUser(tokenPayload);
       updatelogin(true);
     } else {
@@ -64,9 +67,9 @@ const Header = () => {
             <span className='text-3xl mr-5 pt-2'>
               <i className="fa-solid fa-car-side dark:text-white"></i>
             </span>
-            <a href="/">
+            <Link to="/afsaf">
               GearShift
-            </a>
+            </Link>
           </div>
           <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
             <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
