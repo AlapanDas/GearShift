@@ -11,10 +11,11 @@ export default function AccountPage() {
     window.location.href="/"
     return (
       <>{Cookies.get('user_data') || user.username ?
-        <div className='py-4 dark:bg-black'><SectionData/></div>:
+        <SectionData /> :
         <div>
         </div>
       }
+
       </>
     )
 }
