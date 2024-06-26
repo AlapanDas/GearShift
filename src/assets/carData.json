@@ -1,5 +1,6 @@
 {
-    "cars":[
+    "total_count": 100,
+    "results": [
         {
             "price": 25,
             "brand": "audi",

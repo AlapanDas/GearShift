@@ -38,7 +38,7 @@ export default function Login() {
 
                     if (data.status)
                          updatelogin(true);
-                         setUser(user_data);
+                    setUser(user_data);
 
                     Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
                     window.location.href="/";

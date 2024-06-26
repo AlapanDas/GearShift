@@ -17,12 +17,12 @@ function UserInfo() {
             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.fullname}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">Email address</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.email}</dd>
+            <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Email address</dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">{user.email}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">Contact Number</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.number}</dd>
+            <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Contact Number</dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">{user.number}</dd>
           </div>
         </dl>
       </div>

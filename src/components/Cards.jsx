@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import car from '../assets/images/car.svg'
 import brand from '../assets/images/brand.svg'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -11,8 +10,6 @@ export default function Card({ Data }) {
      const carData = Data;
      return (
           <button onClick={() => setIsOpen(true)}>
-
-
                <div>
                     <AnimatePresence>
                          {isOpen && (
@@ -35,19 +32,21 @@ export default function Card({ Data }) {
                                              <div className='flex gap-2 p-2 '>
                                                   <div className='grid grid-rows-2 gap-2'>
                                                        <div className='dark:bg-onprimary bg-primary rounded-xl row-span-2'>
-                                                            <img width={300} src={car} alt="" />
+                                                            <img width={300} src={carData.image} alt="" />
                                                        </div>
                                                        <div className='dark:bg-onprimary bg-primary rounded-xl dark:text-primary text-onprimary row-span-1 p-4 font-medium text-lg flex flex-col'>
-                                                            <p>Petrol Price: ${carData.id}</p>
+                                                            <p>Price: ${carData.price}</p>
                                                        </div>
                                                   </div>
                                                   <div className='grid grid-rows-2 gap-1'>
                                                        <div className='text-lg sm:text-sm font-semibold p-6 row-span-2 dark:bg-onprimary bg-primary rounded-xl dark:text-primary text-onprimary '>
-                                                            <p>Name :{carData.name}</p>
+                                                            <p>Model :{carData.model}</p>
                                                             <p>Brand :{carData.brand}</p>
-                                                            <p>Fuel Type :{carData.fueltype}</p>
-                                                            <p>Transmission :{carData.trany}</p>
+                                                            <p>Condition :{carData.condition}</p>
                                                             <p>Year :{carData.year}</p>
+                                                            <p>Country :{carData.country}</p>
+                                                            <p>MIleage :{carData.mileage}</p>
+                                                            <p>Color :{carData.color}</p>
                                                        </div>
                                                        <div className=' text-lg font-semibold   row-span-1 rounded-xl dark:text-primary text-onprimary flex  justify-around '>
 
