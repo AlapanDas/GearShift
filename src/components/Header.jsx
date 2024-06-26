@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, BrowserRouter as Router } from 'react-router-dom';
 // import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
-import { Link,useNavigate } from 'react-router-dom';
-import { Link,useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
@@ -11,7 +10,7 @@ import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrd
 
 
 const Header = () => {
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },

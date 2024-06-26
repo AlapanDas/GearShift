@@ -8,7 +8,7 @@ const HomeBody = () => {
   const [searchResult, setResult] = useState([])
   const ClickAtFilter = (data) => {
     setResult(data)
-    navigate('/results',{state:data})
+    navigate('/result',{state:data})
   }
   return (
     <>
