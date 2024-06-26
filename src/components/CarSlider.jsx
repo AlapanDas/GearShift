@@ -1,6 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick';
-import carimg1 from "../assets/images/car_iamge.avif"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -32,7 +31,7 @@ function CarSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -62,23 +61,17 @@ function CarSlider() {
     <div className='slider-container mx-5 sm:mx-10 mt-5'>
       <Slider {...settings}>
           <div>
-            <img src={carimg1} alt="hellooo" className=' px-2'/>
+            <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mikebirdy-170811.jpg&fm=jpg" alt="hellooo" className=' px-2'/>
           </div>
           <div>
-          <img src={carimg1} alt="hellooo" className=' px-2' />
+          <img src="https://assets.architecturaldigest.in/photos/60004a09d68a278e29c86a11/16:9/w_2560%2Cc_limit/feature6-1366x768.jpg" alt="hellooo" className=' px-2' />
           </div>
           <div>
-          <img src={carimg1} alt="hellooo" className=' px-2' />
-          </div>
+          <img src="https://res.cloudinary.com/jerrick/image/upload/v1683417189/6456e8653a97fe001d6cb13b.jpg" alt="hellooo" className=' px-2' />
+          </div>     
           <div>
-            <img src={carimg1} alt="hellooo" className=' px-2'/>
-          </div>
-          <div>
-          <img src={carimg1} alt="hellooo" className=' px-2' />
-          </div>
-          <div>
-          <img src={carimg1} alt="hellooo" className=' px-2'/>
-          </div>
+          <img src="https://stat.overdrive.in/wp-content/uploads/2023/03/Untitled-design-2023-03-30T102451.053-900x506.png" alt="hellooo" className=' px-2' />
+          </div> 
     </Slider>
     </div>
   )
