@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Link, BrowserRouter as Router } from 'react-router-dom';
+// import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
@@ -6,8 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig'
 
 
-
 const Header = () => {
+  // const navigate=useNavigate();
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
@@ -37,11 +40,11 @@ const Header = () => {
     const userCookie = Cookies.get('user_data');
     // Searches for Cookie(jwt)
     if (userCookie && userCookie !== "undefined") {
-      console.log(userCookie, typeof userCookie)
+      // console.log(userCookie, typeof userCookie)
       userObject = JSON.parse(userCookie);
       const arrayToken = userObject.split('.');
       const tokenPayload = JSON.parse(atob(arrayToken[1]))
-      console.log(tokenPayload);
+      // console.log(tokenPayload);
       setUser(tokenPayload);
       updatelogin(true);
     } else {
@@ -54,17 +57,19 @@ const Header = () => {
     }
   }, []);
 
-  return (
-      <div className='shadow-md dark:shadow-md w-full top-0 left-0 sticky z-50'>
+
+  return(
+      <Router>
+      <div className='shadow-md dark:shadow-md w-full top-0 left-0  right-0 sticky z-50'>
         <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
           <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
             <span className='text-3xl mr-5 pt-2'>
               <i className="fa-solid fa-car-side dark:text-white"></i>
             </span>
-            <a href="/">
+            <Link to="/afsaf">
               GearShift
-            </a>
+            </Link>
           </div>
           <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
             <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
@@ -95,6 +100,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
+      </Router>
   )
 }
 

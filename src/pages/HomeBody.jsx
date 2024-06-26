@@ -1,16 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
-import CarSlider from '../components/CarSlider';
-
-
 
 const HomeBody = () => {
-  
-  const ClickAtFilter = (data) => {
+
+  const ClickAtFilter = (data)=>{
     console.log(data);
   }
-
   return (
     <>
       <div className='flex flex-col dark:bg-primary'>
@@ -33,12 +29,10 @@ const HomeBody = () => {
           </div>
 
         </div>
-
-        <FilterEngine whenClick={ClickAtFilter} />
-        
+        <FilterEngine whenClick={ClickAtFilter}/> 
       </div>
     </>
   )
 }
 
-export default HomeBody
+export default HomeBody;
