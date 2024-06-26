@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
+import { useNavigate } from 'react-router-dom';
 
 const HomeBody = () => {
-
-  const ClickAtFilter = (data)=>{
-    console.log(data);
+  const navigate=useNavigate();
+  const [searchResult, setResult] = useState([])
+  const ClickAtFilter = (data) => {
+    setResult(data)
+    navigate('/results',{state:data})
   }
-
   return (
     <>
       <div className='flex flex-col dark:bg-primary'>
@@ -27,10 +29,12 @@ const HomeBody = () => {
           </div>
 
         </div>
-        <FilterEngine whenClick={ClickAtFilter}/> 
+
+        <FilterEngine whenClick={ClickAtFilter} />
+
       </div>
     </>
   )
 }
 
-export default HomeBody
+export default HomeBody;
