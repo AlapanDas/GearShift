@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
+import { useNavigate } from 'react-router-dom';
+import CarSlider from "../components/CarSlider";
 
 const HomeBody = () => {
-
-  const ClickAtFilter = (data)=>{
-    console.log(data);
+  const navigate=useNavigate();
+  const [searchResult, setResult] = useState([])
+  const ClickAtFilter = (data) => {
+    setResult(data)
+    navigate('/result',{state:data})
   }
   return (
     <>
+      <CarSlider/>
+      
       <div className='flex flex-col dark:bg-primary'>
-
-        <CarSlider/>
-
         <div className='h-auto flex flex-col sm:flex-row items-stretch justify-between transition ease-in-out duration-150'>
           <div className=' w-auto mt-10 mr-5 sm:w-[50%]'>
             <img src={carImg} alt="car" />
@@ -29,7 +32,9 @@ const HomeBody = () => {
           </div>
 
         </div>
-        <FilterEngine whenClick={ClickAtFilter}/> 
+
+        <FilterEngine whenClick={ClickAtFilter} />
+
       </div>
     </>
   )
