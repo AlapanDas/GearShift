@@ -7,42 +7,86 @@ function UserAddress() {
   const [show, setshow] = React.useState(false);
   function change() {
     setshow(true);
-    const address=document.getElementById("address")
-    const city=document.getElementById("city")
-    const state=document.getElementById("state")
-    const zip=document.getElementById("zip")
-    
   }
+
+  async function handleChange(event){
+    event.preventDefault()
+    const email=user.email
+    const address=document.getElementById("address").value;
+    const city=document.getElementById("city").value;
+    const state=document.getElementById("state").value;
+    const zip=document.getElementById("zip").value;
+    console.log(email)
+    console.log(address)
+    console.log(city)
+    console.log(state)
+    console.log(zip)
+    
+    fetch('https://gearshift-backend.onrender.com/user/update_details',{
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json',
+   },
+   body: JSON.stringify({
+    email:email,
+    address: address,
+    city: city,
+    state: state,
+    zip:zip
+   }),
+   credentials: 'include',
+    })
+    .then((response) => response.json())
+    .then((data)=>{
+      console.log("Form updated:")
+    })
+    .then(()=>{
+      setshow(false)
+    })
+    .catch((error)=>{
+      console.log("eroor:",error)
+    });
+
+  }
+
+
+
   return (
-    <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-black">
+    <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-darkbg">
       {!show &&
         <div className="px-4 sm:px-0">
-          <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">User Address</h3>
+          <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">User Address</h3>
           <div className="mt-6 border-t border-gray-100 dark:text-white">
             <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">Address</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Address</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">
                   {user.address}
                 </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">State</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.state}</dd>
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">Email</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">
+                  {user.email}
+                </dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">City/Town</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.city}</dd>
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">State</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">{user.state}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-secondary">ZIP/Postal Code</dt>
-                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-secondary">{user.pincode}</dd>
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">City/Town</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">{user.city}</dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt className="text-sm font-medium leading-6 text-gray-900 dark:text-white">ZIP/Postal Code</dt>
+                <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 dark:text-white">{user.pincode}</dd>
               </div>
 
             </dl>
             <button
               type="submit"
-              className=" bg-btncol rounded-lg  px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
+              className=" bg-btncol rounded-lg  px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white dark:bg-darkbgbtn "
               onClick={change}
             >
               Change Address
@@ -52,13 +96,13 @@ function UserAddress() {
 
       {show &&
         <div className="px-4 sm:px-0">
-          <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-secondary">Add Address</h3>
-          <form>
+          <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">Add Address</h3>
+          <form onSubmit={handleChange} >
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
                 <div className="col-span-full">
-                  <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
+                  <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
                     Address
                   </label>
                   <div className="mt-2">
@@ -73,7 +117,7 @@ function UserAddress() {
                 </div>
 
                 <div className="sm:col-span-2 sm:col-start-1">
-                  <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
+                  <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
                     City/Town
                   </label>
                   <div className="mt-2">
@@ -88,7 +132,7 @@ function UserAddress() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
+                  <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
                     State / Province
                   </label>
                   <div className="mt-2">
@@ -103,7 +147,7 @@ function UserAddress() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900 dark:text-secondary">
+                  <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
                     ZIP / Postal code
                   </label>
                   <div className="mt-2">
@@ -119,15 +163,15 @@ function UserAddress() {
               </div>
 
               <div className="mt-6 flex items-center justify-end gap-x-6 ">
-                <button type="button" className="text-sm px-3 py-2 font-semibold leading-6 bg-btncol rounded-lg text-gray-900 dark:text-secondary dark:bg-primary ">
+                <button type="button" className="text-sm px-3 py-2 font-semibold leading-6 bg-btncol rounded-lg text-gray-900 dark:text-white dark:bg-darkbgbtn "
+                 onClick={() => {
+                  setshow(false)
+                }}>
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-btncol rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-secondary dark:bg-primary "
-                  onClick={() => {
-                    setshow(false)
-                  }}
+                  className="bg-btncol rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white dark:bg-darkbgbtn "  
                 >
                   Save
                 </button>
