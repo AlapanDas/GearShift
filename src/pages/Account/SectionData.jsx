@@ -7,7 +7,7 @@ import Orders from "./Orders";
 
 function SectionData() {
   return (
-    <div>
+    <div className='py-4 dark:bg-black'>
       <Logout />
       <UserInfo />
       <UserAddress />

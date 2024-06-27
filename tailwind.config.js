@@ -14,7 +14,9 @@ module.exports = {
       'black': '#000',
       'white': '#fff',
       'gray' : '#272927',
-      'btncol': '#7AB2B2'
+      'btncol': '#7AB2B2',
+      'darkbg':'#004c4f',
+      'darkbgbtn':'#003336',
     },
     extend: {
       fontFamily: {
