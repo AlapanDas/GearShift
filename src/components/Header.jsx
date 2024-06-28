@@ -58,19 +58,19 @@ const Header = () => {
   }, []);
 
 
-  return(
-      <Router>
+  return (
+    <Router>
       <div className='shadow-md dark:shadow-md w-full top-0 left-0  right-0 sticky z-50'>
-        <div className='h-[75px] lg:flex items-center justify-between py-4 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
-          <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+        <div className='h-[75px] lg:flex items-center justify-between py-3 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
+          <Link to="/">
+            <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
         text-black dark:text-white transition ease-in-out duration-150'>
-            <span className='text-3xl mr-5 pt-2'>
-              <i className="fa-solid fa-car-side dark:text-white"></i>
-            </span>
-            <Link to="/">
+              <span className='text-3xl mr-5 pt-2'>
+                <i className="fa-solid fa-car-side dark:text-white"></i>
+              </span>
               GearShift
-            </Link>
-          </div>
+            </div>
+          </Link>
           <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
             <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
           </div>
@@ -83,13 +83,13 @@ const Header = () => {
               ))
             }
             {setlogin ?
-              <a href="/accounts">
+              <a className='' href="/accounts">
                 <Button>
                   {user.fullname || userObject.username}
                 </Button>
               </a>
               :
-              <a href="/login">
+              <a className='' href="/login">
                 <Button>
                   Sign Up / Login
                 </Button>
@@ -100,7 +100,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      </Router>
+    </Router>
   )
 }
 

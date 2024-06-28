@@ -21,9 +21,7 @@ const demo_car_home = (props) => {
 
                 }
             </div>
-            <div className='flex items-center justify-center pt-10 pb-10'>
-                <Link to="/result"><button className='border-onprimary border-2 text-[#15868a] dark:text-white active:scale-95 hover:scale-105 p-2 px-4 rounded-full'> Explore more</button></Link>
-            </div>
+            
         </div>
     )
 }
