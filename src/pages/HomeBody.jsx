@@ -24,7 +24,7 @@ const HomeBody = () => {
           </div>
           <div className=' mt-10 ml-[15%] sm:w-[45%] flex flex-left flex-col sm:flex-col h-auto w-auto'>
             <div className=' h-[30%] w-[60%] mt-[13%] flex items-center justify-center'>
-              <h1 className='text-5xl font-bold dark:text-white transition ease-in-out duration-150'>Discover Your <span className='text-notif h-auto'>Dream</span> Car</h1>
+              <h1 className='text-5xl font-bold dark:text-white transition ease-in-out duration-150'>Discover Your <span className=' text-darkbgbtn dark:text-btncol  h-auto'>Dream</span> Car</h1>
             </div>
             <div className='position-relative mt-10 sm:mt-20 lg:mt-10'>
               <button className='bg-notif mb-10 text-white p-2.5 font-semibold rounded-md shadow-xl sm:shadow-xl active:scale-95 hover:opacity-[90%]'>

@@ -67,7 +67,7 @@ const Header = () => {
             <span className='text-3xl mr-5 pt-2'>
               <i className="fa-solid fa-car-side dark:text-white"></i>
             </span>
-            <Link to="/afsaf">
+            <Link to="/">
               GearShift
             </Link>
           </div>

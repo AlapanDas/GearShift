@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 
 const demo_car_home = (props) => {
-    console.log(all_data.cars[0])
     return (
         <div className='pt-24'>
             <h1 className='text-center font-sans font-semibold text-6xl pb-16 dark:text-white'>
@@ -16,7 +15,6 @@ const demo_car_home = (props) => {
                     all_data.cars
                         .filter(item => props.category === item.category)
                         .map((item) => {
-                            console.log(item)
                             return <Card Data={item} />
                         })
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -94,9 +95,7 @@ const Footer = () => {
               GearShift
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              GearShift is no. 1 car buying platform, here you can buy cars of various choices and budget
             </p>
           </div>
           {/* <!-- Products section --> */}
@@ -104,23 +103,23 @@ const Footer = () => {
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-              Products
+              Links
             </h6>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Angular</a>
+              <a href='/' className="text-neutral-600 dark:text-neutral-200"
+              >Home</a>
             </p>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >React</a>
+              <a href='/about'  className="text-neutral-600 dark:text-neutral-200"
+              >About</a>
             </p>
             <p className="mb-4">
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Vue</a>
+              <a href='/carservice' className="text-neutral-600 dark:text-neutral-200"
+              >Car Service</a>
             </p>
             <p>
-              <a className="text-neutral-600 dark:text-neutral-200"
-              >Laravel</a>
+              <a href='/contact' className="text-neutral-600 dark:text-neutral-200"
+              >Contact</a>
             </p>
           </div>
           {/* <!-- Useful links section --> */}
