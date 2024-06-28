@@ -26,7 +26,7 @@ export default function Card({ Data }) {
                                              initial={{ opacity: 0, scale: 0.95 }}
                                              animate={{ opacity: 1, scale: 1 }}
                                              exit={{ opacity: 0, scale: 0.95 }}
-                                             className=" relative max-w-xl space-y-4 bg-onprimary p-8 rounded-custom shadow-custom dark:bg-primary dark:text-white"
+                                             className=" relative max-w-xl space-y-4 bg-onprimary p-8 rounded-custom shadow-custom dark:bg-primary dark:text-white "
                                         >
                                              <button className='absolute top-4 left-4' onClick={() => setIsOpen(false)}>{'👈'}</button>
                                              <div className='flex gap-2 p-2 '>
@@ -63,7 +63,7 @@ export default function Card({ Data }) {
                               </Dialog>
                          )}
                     </AnimatePresence>
-                    <div className='border border-primary mx-4 bg-onprimary dark:bg-primary  w-64  h-min  shadow-custom rounded-t-custom'>
+                    <div className='border h-[200px] border-primary mx-4 bg-onprimary dark:bg-primary  w-64 flex items-center  shadow-custom rounded-t-custom'>
                          <div>
                               <div className="image p-3 ">
                                    <img src={carData.image} alt="Car" />

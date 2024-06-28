@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
 import { useNavigate } from 'react-router-dom';
+import Demo_cars from '../components/demo_car_home';
 
 const HomeBody = () => {
   const navigate=useNavigate();
@@ -29,49 +30,10 @@ const HomeBody = () => {
           </div>
 
         </div>
-        <div id='Search-filter' className=' m-auto mt-4 mb-8'>
-          <form className='flex flex-col lg:flex-row justify-center' onSubmit={collection_data}>
-            <div className='flex flex-col sm:flex-row border-2 border-notif lg:px-1 rounded-md'>
-              <div className='flex flex-col py-3 px-32 border-b-2 sm:border-r-2 sm:px-10 sm:border-b-0 border-notif'>
-                <label htmlFor="selection-for-budget" className='text-center text-xl font-bold text-notif'>Budget</label>
-                <select name="budget" id="budget" className='dark:bg-primary dark:text-white' onChange={dataChange}>
-                  <option value=''>Select</option>
-                  <option value='{"min":100000,"max":200000}'>100000-200000</option>
-                  <option value='{"min":200000,"max":300000}'>200000-300000</option>
-                  <option value='{"min":300000,"max":400000}'>300000-400000</option>
-                </select>
-              </div>
-              <div className='flex flex-col py-3 px-32 border-b-2 sm:border-r-2 lg:px-10 sm:border-b-0 sm:px-10 border-notif'>
-                <label htmlFor="selection-for-vehicle" className='text-center text-xl font-bold text-notif'>Vehicle</label>
-                <select name="vehicle" id="vehicle" className='dark:bg-primary dark:text-white' onChange={dataChange}>
-                  <option value=''>Select</option>
-                  <option value="Car">Car</option>
-                  <option value="Bike">Bike</option>
-                  <option value="Truck">Truck</option>
-                </select>
-              </div>
-              <div className='flex flex-col py-3 px-32 border-b-2 sm:border-b-0 sm:border-r-2 lg:px-10 sm:px-10 border-notif'>
-                <label htmlFor="selection-for" className='text-center text-xl font-bold text-notif'>Brand</label>
-                <select name="brand" id="brand" className='dark:bg-primary dark:text-white' onChange={dataChange}>
-                  <option value=''>Select</option>
-                  <option value="Audi">Audi</option>
-                  <option value="Toyota">Toyota</option>
-                  <option value="Marsades">Marsades</option>
-                </select>
-              </div>
-              <div className='flex flex-col py-3 px-32 lg:px-10 sm:px-10 border-notif'>
-                <label htmlFor="selection-for" className='text-center text-xl font-bold text-notif'>Model</label>
-                <select name="model" id="model" className='dark:bg-primary dark:text-white' onChange={dataChange}>
-                  <option value=''>Select</option>
-                  <option value="Discover">Discover</option>
-                  <option value="Neon">Neon</option>
-                  <option value="Glacier">Glacier</option>
-                </select>
-              </div>
-            </div>
-            <button type='submit' className='bg-notif h-10 w-28 text-center text-white font-bold px-4 py-2 rounded-md my-5 mx-auto lg:my-auto lg:ml-8 hover:shadow-sm  hover:scale-105'><FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#ffffff" }}></FontAwesomeIcon><span> Search</span></button>
-          </form>
-        </div>
+
+        <FilterEngine whenClick={ClickAtFilter} />
+        <Demo_cars category="demo"/>
+
       </div>
     </>
   )
