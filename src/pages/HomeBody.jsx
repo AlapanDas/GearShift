@@ -28,7 +28,6 @@ const HomeBody = () => {
               </button>
             </div>
           </div>
-
         </div>
 
         <FilterEngine whenClick={ClickAtFilter} />
