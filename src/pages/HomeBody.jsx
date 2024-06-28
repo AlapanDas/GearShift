@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
 import { useNavigate } from 'react-router-dom';
-import Demo_cars from '../components/demo_car_home';
 
 const HomeBody = () => {
   const navigate=useNavigate();
@@ -32,7 +31,6 @@ const HomeBody = () => {
         </div>
 
         <FilterEngine whenClick={ClickAtFilter} />
-        <Demo_cars category="demo"/>
 
       </div>
     </>

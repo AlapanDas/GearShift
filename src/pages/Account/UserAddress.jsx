@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Cookies from 'js-cookie';
 
 
 function UserAddress() {
@@ -12,18 +11,16 @@ function UserAddress() {
 
   async function handleChange(event){
     event.preventDefault()
-    const email = user.email;
+    const email=user.email
     const address=document.getElementById("address").value;
     const city=document.getElementById("city").value;
     const state=document.getElementById("state").value;
     const zip=document.getElementById("zip").value;
-
-    // console.log(jwt)
-    // console.log(address)
-    // console.log(city)
-    // console.log(state)
-    // console.log(zip)
-    
+    console.log(email)
+    console.log(address)
+    console.log(city)
+    console.log(state)
+    console.log(zip)
     
     fetch('https://gearshift-backend.onrender.com/user/update_details',{
       method:'POST',
@@ -31,18 +28,17 @@ function UserAddress() {
         'Content-Type': 'application/json',
    },
    body: JSON.stringify({
-    email: email,
+    email:email,
     address: address,
     city: city,
     state: state,
-    zip:Number(zip)
+    zip:zip
    }),
    credentials: 'include',
     })
     .then((response) => response.json())
     .then((data)=>{
       console.log("Form updated:")
-      console.log(data)
     })
     .then(()=>{
       setshow(false)
