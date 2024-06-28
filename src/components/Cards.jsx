@@ -76,7 +76,7 @@ export default function Card({ Data }) {
                          </div>
                          <div className='text-start font-body m-2 font-semibold dark:text-primary text-onprimary text-sm'>
                               <p>Name: {carData.name}</p>
-                              <p>Price: ${carData.id}</p>
+                              <p>Price: ${carData.price}</p>
                          </div>
                     </div>
                </div>
