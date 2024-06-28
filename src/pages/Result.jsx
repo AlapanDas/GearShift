@@ -32,7 +32,7 @@ export default function Result(Params) {
                                    {JSON.parse(decodeURIComponent(Cookies.get("filterData"))).car.map((element) => {
                                         return <div><Card Data={element} /></div>
                                    })}
-                              </div> : <div className=' min-h-20 mt-10 text-lg font-semibold opacity-80'>There's No Search history</div>}
+                              </div> : <div className=' min-h-20 mt-10 text-lg font-semibold opacity-80 dark:text-white'>There's No Search history</div>}
                               
                          </div>
                     </div>
