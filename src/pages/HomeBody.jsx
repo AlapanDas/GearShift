@@ -3,6 +3,7 @@ import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
 import { useNavigate } from 'react-router-dom';
 import Demo_cars from '../components/demo_car_home';
+import CarSlider from "../components/CarSlider";
 
 const HomeBody = () => {
   const navigate=useNavigate();
@@ -13,6 +14,9 @@ const HomeBody = () => {
   }
   return (
     <>
+
+      <CarSlider/>
+
       <div className='flex flex-col dark:bg-primary'>
         <div className='h-auto flex flex-col sm:flex-row items-stretch justify-between transition ease-in-out duration-150'>
           <div className=' w-auto mt-10 mr-5 sm:w-[50%]'>

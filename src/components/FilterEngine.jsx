@@ -42,6 +42,9 @@ function FilterEngine(props) {
                     credentials: 'include',
                 })
                 let data = await response.json()
+                if(data.car.length!==0){
+                    document.cookie = `filterData=${encodeURIComponent(JSON.stringify(data))};max-age=172800`
+                }
                 props.whenClick(data);
             } catch (error) {
                 console.log(error)
@@ -50,11 +53,11 @@ function FilterEngine(props) {
     }
 
     return (
-        <div id='Search-filter' className=' m-auto mt-4 mb-8'>
+        <div id='Search-filter' className=' m-auto mt-4 mb-8 w-[90%] sm:w-fit'>
             <form className='flex flex-col lg:flex-row justify-center' onSubmit={collection_data}>
-                <div className='flex flex-col sm:flex-row border-2 border-notif lg:px-1 rounded-md'>
-                    <div className='flex flex-col py-3 px-32 border-b-2 sm:border-r-2 sm:px-10 sm:border-b-0 border-notif'>
-                        <label htmlFor="selection-for-budget" className='text-center text-xl font-bold text-notif'>Budget</label>
+                <div className='flex-col sm:grid sm:grid-cols-2 md:flex md:flex-row border-2 border-notif lg:px-1 rounded-md'>
+                    <div className='flex justify-center items-center flex-col py-3 px-24 border-b-2 sm:border-r-2 sm:px-10 sm:border-b-2 md:border-b-0 border-notif'>
+                        <label htmlFor="selection-for-budget" className='text-center text-2xl sm:text-xl font-bold text-notif'>Budget</label>
                         <select name="budget" id="budget" className='dark:bg-primary dark:text-white' onChange={dataChange}>
                             <option value='' className=' text-notif'>Select</option>
                             <option value='{"min":2000,"max":10000}'>$2000 to $10000</option>
@@ -63,8 +66,8 @@ function FilterEngine(props) {
                             <option value='{"min":30001,"max":40000}'>$30001 to $40000</option>
                         </select>
                     </div>
-                    <div className='flex flex-col py-3 px-32 border-b-2 sm:border-r-2 lg:px-10 sm:border-b-0 sm:px-10 border-notif'>
-                        <label htmlFor="selection-for-color" className='text-center text-xl font-bold text-notif'>Color</label>
+                    <div className='flex justify-center items-center flex-col py-3 px-24 border-b-2 sm:border-r-0 md:border-r-2 lg:px-10 sm:border-b-2 md:border-b-0 sm:px-10 border-notif'>
+                        <label htmlFor="selection-for-color" className='text-center text-2xl sm:text-xl font-bold text-notif'>Color</label>
                         <select name="color" id="color" className='dark:bg-primary dark:text-white' onChange={dataChange}>
                             <option value='' className='text-notif'>Select</option>
                             <option value="black">Black</option>
@@ -77,8 +80,8 @@ function FilterEngine(props) {
                             <option value="charcoal">Charcoal</option>
                         </select>
                     </div>
-                    <div className='flex flex-col py-3 px-32 border-b-2 sm:border-b-0 sm:border-r-2 lg:px-10 sm:px-10 border-notif'>
-                        <label htmlFor="selection-for-brand" className='text-center text-xl font-bold text-notif'>Brand</label>
+                    <div className='flex justify-center items-center flex-col py-3 px-24 border-b-2 sm:border-b-0 sm:border-r-2 lg:px-10 sm:px-10 border-notif'>
+                        <label htmlFor="selection-for-brand" className='text-center text-2xl sm:text-xl font-bold text-notif'>Brand</label>
                         <select name="brand" id="brand" className='dark:bg-primary dark:text-white' onChange={dataChange}>
                             <option value='' className='text-notif'>Select</option>
                             <option value="toyota">Toyota</option>
@@ -94,8 +97,8 @@ function FilterEngine(props) {
                             <option value="jeep">Jeep</option>
                         </select>
                     </div>
-                    <div className='flex flex-col py-3 px-32 lg:px-10 sm:px-10 border-notif'>
-                        <label htmlFor="selection-for-model" className='text-center text-xl font-bold text-notif'>Model</label>
+                    <div className='flex justify-center items-center flex-col py-3 px-24 lg:px-10 sm:px-10 border-notif'>
+                        <label htmlFor="selection-for-model" className='text-center text-2xl sm:text-xl font-bold text-notif'>Model</label>
                         <select name="model" id="model" className='dark:bg-primary dark:text-white' onChange={dataChange}>
                             <option value='' className='text-notif'>Select</option>
                             <option value="cruiser">Cruiser</option>
@@ -120,7 +123,7 @@ function FilterEngine(props) {
                         </select>
                     </div>
                 </div>
-                <button type='submit' className='bg-notif h-10 w-28 text-center text-white font-bold px-4 py-2 rounded-md my-5 mx-auto lg:my-auto lg:ml-8 hover:shadow-sm  hover:scale-105'><FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#ffffff" }}></FontAwesomeIcon><span> Search</span></button>
+                <button type='submit' className='bg-notif h-10 w-28 text-center text-white font-bold px-4 py-2 rounded-md my-5 mx-auto lg:my-auto lg:ml-8 hover:shadow-sm  hover:opacity-90'><FontAwesomeIcon icon={faMagnifyingGlass} style={{ color: "#ffffff" }}></FontAwesomeIcon><span> Search</span></button>
             </form>
         </div>
     )
