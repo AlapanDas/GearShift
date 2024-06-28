@@ -27,7 +27,7 @@ export default function Result(Params) {
                               </div>
                          </div>
                          <div className='flex flex-col justify-center items-center'>
-                              <div className=' text-4xl font-semibold text-primary dark:text-white'>Your Previous Searches</div>
+                              <div className=' text-4xl font-semibold text-primary dark:text-white'>Your Previous Searches are here</div>
                               {document.cookie.includes("filterData") ? <div className='mx-auto grid 2xl:grid-cols-4 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-6 p-4 justify-items-center pb-16 h-80 overflow-scroll mt-12 mb-8'>
                                    {JSON.parse(decodeURIComponent(Cookies.get("filterData"))).car.map((element) => {
                                         return <div><Card Data={element} /></div>
