@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Card from '../components/Cards'
-import {useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import FilterEngine from '../components/FilterEngine'
 import Cookies from 'js-cookie';
 
 export default function Result(Params) {
-     const location=useLocation();
+     const location = useLocation();
      const [searchdata, setData] = useState(location.state);
 
      const ClickAtFilter = (data) => {

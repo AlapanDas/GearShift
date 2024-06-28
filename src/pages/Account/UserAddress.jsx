@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import Cookies from 'js-cookie';
 
 
 function UserAddress() {
@@ -11,11 +12,21 @@ function UserAddress() {
 
   async function handleChange(event){
     event.preventDefault()
-    const email=user.email
+    const email = user.email;
     const address=document.getElementById("address").value;
     const city=document.getElementById("city").value;
     const state=document.getElementById("state").value;
     const zip=document.getElementById("zip").value;
+<<<<<<< HEAD
+=======
+
+    // console.log(jwt)
+    // console.log(address)
+    // console.log(city)
+    // console.log(state)
+    // console.log(zip)
+    
+>>>>>>> bff88c64bc292ad714588ece0dc2f7dbd432a867
     
     fetch('https://gearshift-backend.onrender.com/user/update_details',{
       method:'POST',
@@ -23,18 +34,26 @@ function UserAddress() {
         'Content-Type': 'application/json',
    },
    body: JSON.stringify({
-    email:email,
+    email: email,
     address: address,
     city: city,
     state: state,
+<<<<<<< HEAD
     zip:parseInt(zip)
+=======
+    zip:Number(zip)
+>>>>>>> bff88c64bc292ad714588ece0dc2f7dbd432a867
    }),
    credentials: 'include',
     })
     .then((response) => response.json())
     .then((data)=>{
       console.log("Form updated:")
+<<<<<<< HEAD
       console.log(data);
+=======
+      console.log(data)
+>>>>>>> bff88c64bc292ad714588ece0dc2f7dbd432a867
     })
     .then(()=>{
       setshow(false)
