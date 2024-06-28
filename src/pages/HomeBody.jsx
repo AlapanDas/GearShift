@@ -3,6 +3,8 @@ import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
 import { useNavigate } from 'react-router-dom';
 import CarSlider from "../components/CarSlider";
+import Cookies from 'js-cookie';
+
 
 const HomeBody = () => {
   const navigate=useNavigate();

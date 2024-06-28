@@ -58,7 +58,7 @@ function CarSlider() {
     ]
   };
   return (
-    <div className='slider-container mx-5 sm:mx-10 mt-5'>
+    <div className='slider-container px-5 sm:px-10 pt-5 dark:bg-primary'>
       <Slider {...settings}>
           <div>
             <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?cs=srgb&dl=pexels-mikebirdy-170811.jpg&fm=jpg" alt="hellooo" className=' px-2'/>

@@ -42,6 +42,9 @@ function FilterEngine(props) {
                     credentials: 'include',
                 })
                 let data = await response.json()
+                if(data.car.length!==0){
+                    document.cookie = `filterData=${encodeURIComponent(JSON.stringify(data))};max-age=172800`
+                }
                 props.whenClick(data);
             } catch (error) {
                 console.log(error)
