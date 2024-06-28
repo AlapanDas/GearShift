@@ -8,7 +8,7 @@ const demo_car_home = (props) => {
     console.log(all_data.cars[0])
     return (
         <div className='pt-24'>
-            <h1 className='text-center font-sans font-semibold text-6xl pb-16 dark:text-white'>
+            <h1 className='text-center font-sans font-semibold text-6xl pb-16'>
                 Start Your Journey
             </h1>
             <div className='mx-auto grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-6 p-4 justify-items-center'>
