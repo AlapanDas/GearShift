@@ -10,12 +10,15 @@ import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 
-
+const currentTheme = localStorage.getItem('theme');
+if (!currentTheme || currentTheme === 'light') {
+    localStorage.setItem('theme', 'dark');
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
         <Header />
-        <App/>
+        <App />
         <Footer />
     </Provider>
 );
