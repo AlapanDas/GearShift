@@ -24,7 +24,7 @@ function UserAddress() {
     // console.log(zip)
     
     
-    fetch('http://localhost:8000/user/update_details',{
+    fetch('https://gearshift-backend.onrender.com/user/update_details',{
       method:'POST',
       headers: {
         'Content-Type': 'application/json',
