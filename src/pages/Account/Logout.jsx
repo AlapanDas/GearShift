@@ -6,6 +6,20 @@ import user_img from "../../assets/images/user_profile.png";
 
 
 function Logout() {
+  function deleteuser() {
+    const secret=Cookies.get('user_data');
+    fetch('https://gearshift-backend.onrender.com/user/delete', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        secret: secret.replace(/"/g, ''),
+      }),
+      credentials: 'include',
+    }).then(window.location.href='/');
+  }
+  
   function logout() {
     try {
       deleteUser();
@@ -32,6 +46,7 @@ function Logout() {
           <div className="bg-btncol rounded-lg flex">
             <button
               type="submit"
+              onClick={deleteuser}
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white dark:bg-darkbgbtn "
             >
               Delete Account
