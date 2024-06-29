@@ -10,10 +10,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the scrollbar */
 }
+
+::selection {
+  color: #efefef;
+  background-color: #7AB2B2;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+  /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5a5a5a;
+  border-radius: 4px;
+  /* Color of the scrollbar handle */
+}
+
 
 @font-face {
   font-family: "San Francisco Display Ultralight";
