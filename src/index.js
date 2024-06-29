@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import router from './router';
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -15,6 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
         <Header />
+        <ToastContainer position="top-center"/>
         <App/>
         <Footer />
     </Provider>

@@ -3,7 +3,6 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function FilterEngine(props) {
-
     const [Data, setData] = useState({
         brand: "",
         budget: "",

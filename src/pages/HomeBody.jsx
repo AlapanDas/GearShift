@@ -4,14 +4,24 @@ import FilterEngine from '../components/FilterEngine';
 import { useNavigate } from 'react-router-dom';
 import Demo_cars from '../components/demo_car_home';
 import CarSlider from "../components/CarSlider";
+import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const HomeBody = () => {
+  const location = useLocation()
   const navigate=useNavigate();
   const [searchResult, setResult] = useState([])
   const ClickAtFilter = (data) => {
     setResult(data)
     navigate('/result',{state:data})
   }
+  if(location.state!==null){
+    if(location.state.showToast){
+      toast.success("Sucessfully logged in")
+    }
+  }
+
+
   return (
     <>
 

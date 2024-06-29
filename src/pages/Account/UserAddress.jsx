@@ -53,8 +53,6 @@ function UserAddress() {
 
   }
 
-
-
   return (
     <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-darkbg">
       {!show &&
