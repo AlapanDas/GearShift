@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import React from "react";
+
 import { deleteUser } from "../../user/userconfig";
 import user_img from "../../assets/images/user_profile.png";
 
