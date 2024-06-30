@@ -2,11 +2,15 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import { setUser } from '../user/userconfig'
+import { setUser } from '../user/userconfig';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
      const [setlogin, updatelogin] = useState(false)
+     const navigate = useNavigate();
      const [showPasswordSignIn, setShowPasswordSignIn] = useState(false);
      const [showPasswordSignUp, setShowPasswordSignUp] = useState(false);
      const showSignInPassword = () => {
@@ -31,20 +35,23 @@ export default function Login() {
                credentials: 'include',
           })
                .then((response) => response.json())
-               .then((data) => {
-
-                    let user_data = data.user;
-
-                    if (data.status)
+               .then((data) => { 
+                    if (data.status){
+                         let user_data = data.user;
                          updatelogin(true);
-                    setUser(user_data);
+                         setUser(user_data);
 
-                    Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
-                    window.location.href="/";
+                         Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
+                         // toast.success("Succesfully Logged In")
+                         navigate('/',{state : {showToast : true}})
+                    }else{
+                         updatelogin(false);
+                         toast.error(`Error : Invalid Credentials`);
+                    }
                })
                .catch((error) => {
                     updatelogin(false);
-                    console.error('Error:', error)
+                    console.error(`Error : ${error}`)
                });
 
 

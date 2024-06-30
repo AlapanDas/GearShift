@@ -2,8 +2,9 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
-import { setUser } from '../user/userconfig'
-
+import { setUser } from '../user/userconfig';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function SignUp() {
      const [setlogin, updatelogin] = useState(false)
@@ -29,14 +30,19 @@ export default function SignUp() {
           })
                .then((response) => response.json())
                .then((data) => {
-
-                    let user_data = data.user;
-                    if (data.status)
+                    if (data.status){
+                         let user_data = data.user;
                          updatelogin(true);
-                    setUser(user_data);
+                         setUser(user_data);
 
-                    Cookies.set('user_data', user_data, { expires: 2 });
-                    window.location.href = '/'
+                         Cookies.set('user_data', user_data, { expires: 2 });
+                         toast.success("Successfully created a new account")
+                         window.location.href = '/'
+                    }
+                    else{
+                         updatelogin(false);
+                         toast.error("Opps! Something went wrong")
+                    }
                })
                .catch((error) => {
                     updatelogin(false);
@@ -150,6 +156,7 @@ export default function SignUp() {
                                    </div>
                               </div>
                          </div>
+                         <div className='text-center mt-10 text-lg dark:text-white'>Already have an account? <Link to="/login" className=' font-semibold text-notif dark:text-onprimary'>Log In</Link></div>
                     </div>
                </div>
           </>
