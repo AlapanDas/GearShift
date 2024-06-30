@@ -12,13 +12,12 @@ function UserAddress() {
 
   async function handleChange(event){
     event.preventDefault()
-    const email = user.email;
+    const secret=Cookies.get('user_data');
     const address=document.getElementById("address").value;
     const city=document.getElementById("city").value;
     const state=document.getElementById("state").value;
     const zip=document.getElementById("zip").value;
 
-    // console.log(jwt)
     // console.log(address)
     // console.log(city)
     // console.log(state)
@@ -31,24 +30,25 @@ function UserAddress() {
         'Content-Type': 'application/json',
    },
    body: JSON.stringify({
-    email: email,
+    secret:secret.replace(/"/g, ''),
     address: address,
     city: city,
     state: state,
-    zip:Number(zip)
+    pincode:Number(zip)
    }),
    credentials: 'include',
     })
     .then((response) => response.json())
     .then((data)=>{
-      console.log("Form updated:")
-      console.log(data)
+      Cookies.remove('user_data');
+      Cookies.set('user_data', JSON.stringify(data.user), { expires: 2 });
+      window.location.reload();
     })
     .then(()=>{
       setshow(false)
     })
     .catch((error)=>{
-      console.log("eroor:",error)
+      console.log("error:",error)
     });
 
   }

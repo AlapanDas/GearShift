@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import AccountPage from './AccountPage';
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';

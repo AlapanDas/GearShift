@@ -11,7 +11,10 @@ import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 
-
+const currentTheme = localStorage.getItem('theme');
+if (!currentTheme || currentTheme === 'light') {
+    localStorage.setItem('theme', 'dark');
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
