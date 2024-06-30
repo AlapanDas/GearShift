@@ -59,7 +59,6 @@ const Header = () => {
 
 
   return (
-    <Router>
       <div className='shadow-md dark:shadow-md w-full top-0 left-0  right-0 sticky z-50'>
         <div className='h-[75px] lg:flex items-center justify-between py-3 lg:px-10 px-7 dark:backdrop-blur-sm transition ease-in-out duration-150 dark:bg-gray  backdrop-blur-lg'>
           <Link to="/">
@@ -78,29 +77,28 @@ const Header = () => {
             {
               Links.map((link) => (
                 <li key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
-                  <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
+                  <Link to={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</Link>
                 </li>
               ))
             }
             {setlogin ?
-              <a className='' href="/accounts">
+              <Link className='' to="/accounts">
                 <Button>
-                  {user.fullname || userObject.username}
+                  {user.fullname || user.username}
                 </Button>
-              </a>
+              </Link>
               :
-              <a className='' href="/login">
+              <Link className='' to="/login">
                 <Button>
                   Sign Up / Login
                 </Button>
-              </a>
+              </Link>
             }
 
             <DarkModeToggle />
           </ul>
         </div>
       </div>
-    </Router>
   )
 }
 

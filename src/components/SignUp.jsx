@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
 import { setUser } from '../user/userconfig';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function SignUp() {
      const [setlogin, updatelogin] = useState(false)
+     const navigate = useNavigate();
      const [showPasswordSignIn, setShowPasswordSignIn] = useState(false);
      const showSignInPassword = () => {
           setShowPasswordSignIn(!showPasswordSignIn);
@@ -16,7 +17,7 @@ export default function SignUp() {
           const username = document.getElementById('name-signin').value;
           const password = document.getElementById('password-signin').value;
           const email = document.getElementById('email-signin').value;
-          fetch('https://gearshift-backend.onrender.com/user/signin', {
+          fetch('http://gearshift-backend.onrender.com/user/signin', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json',
@@ -30,14 +31,15 @@ export default function SignUp() {
           })
                .then((response) => response.json())
                .then((data) => {
+                    console.log(data)
                     if (data.status){
                          let user_data = data.user;
                          updatelogin(true);
                          setUser(user_data);
 
-                         Cookies.set('user_data', user_data, { expires: 2 });
-                         toast.success("Successfully created a new account")
-                         window.location.href = '/'
+                         Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
+                         // toast.success("Successfully created a new account")
+                         navigate('/',{state : {showToastSignUp : true}})
                     }
                     else{
                          updatelogin(false);
