@@ -32,6 +32,7 @@ function FilterEngine(props) {
             alert("Please choose at least one filter criteria");
         } else {
             try {
+                props.isSpin(true);
                 let response = await fetch('https://gearshift-backend.onrender.com/car/search', {
                     method: 'POST',
                     headers: {
@@ -44,6 +45,7 @@ function FilterEngine(props) {
                 if(data.car.length!==0){
                     document.cookie = `filterData=${encodeURIComponent(JSON.stringify(data))};max-age=172800`
                 }
+                props.isSpin(false);
                 props.whenClick(data);
             } catch (error) {
                 console.log(error)

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import carImg from '../assets/images/home-car.png';
 import FilterEngine from '../components/FilterEngine';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,Link} from 'react-router-dom';
 import Demo_cars from '../components/demo_car_home';
 import CarSlider from "../components/CarSlider";
 import { useLocation } from 'react-router-dom';
@@ -11,6 +11,10 @@ const HomeBody = () => {
   const location = useLocation()
   const navigate=useNavigate();
   const [searchResult, setResult] = useState([])
+ const SpinAtClick = (allow)=>{
+   console.log("Nice")
+ }
+
   const ClickAtFilter = (data) => {
     setResult(data)
     navigate('/result', { state: data })
@@ -44,7 +48,7 @@ const HomeBody = () => {
           </div>
         </div>
 
-        <FilterEngine whenClick={ClickAtFilter} />
+        <FilterEngine whenClick={ClickAtFilter} isSpin={SpinAtClick}/>
         <Demo_cars category="demo" />
         <div className='flex items-center justify-center pt-10 pb-10'>
           <Link to="/result"><button className='border-onprimary border-2 bg-darkbg dark:bg-btncol  dark:text-black text-white active:scale-95 hover:scale-105 p-2 px-4 rounded-full'> Explore more</button></Link>
