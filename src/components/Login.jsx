@@ -43,7 +43,7 @@ export default function Login() {
 
                          Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
                          // toast.success("Succesfully Logged In")
-                         navigate('/',{state : {showToast : true}})
+                         navigate('/',{state : {showToast : true,isUserlogin : true}})
                     }else{
                          updatelogin(false);
                          toast.error(`Error : Invalid Credentials`);

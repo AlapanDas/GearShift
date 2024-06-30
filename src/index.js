@@ -18,9 +18,9 @@ if (!currentTheme || currentTheme === 'light') {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
-        <Header />
+        {/* <Header /> */}
         <ToastContainer position="top-center"/>
         <App/>
-        <Footer />
+        {/* <Footer /> */}
     </Provider>
 );

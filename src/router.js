@@ -1,5 +1,4 @@
 import LoginSignup from './pages/LoginSignup';
-import SignUp from './pages/SignUp';
 import HomeBody from "./pages/HomeBody";
 import { createBrowserRouter } from "react-router-dom";
 import Result from './pages/Result'
