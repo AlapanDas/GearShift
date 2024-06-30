@@ -1,4 +1,5 @@
 import LoginSignup from './pages/LoginSignup';
+import SignUp from './pages/SignUp';
 import HomeBody from "./pages/HomeBody";
 import { createBrowserRouter } from "react-router-dom";
 import Result from './pages/Result'
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
                {
                     path: "login",
                     element: <LoginSignup />,
+                    errorElement: <FourOFour />
+               },
+               {
+                    path: "signup",
+                    element: <SignUp />,
                     errorElement: <FourOFour />
                },
                // {
