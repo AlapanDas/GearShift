@@ -13,11 +13,11 @@ const demo_car_home = (props) => {
             <div className='mx-auto grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-6 p-4 justify-items-center'>
                 {
                     all_data.cars
-                        .filter(item => props.category === item.category)
+                        .filter((item) =>{
+                            return item.category === props.category})
                         .map((item) => {
                             return <Card Data={item} />
                         })
-
 
                 }
             </div>
