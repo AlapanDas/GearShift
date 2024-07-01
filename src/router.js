@@ -26,6 +26,11 @@ const router = createBrowserRouter([
                     element: <LoginSignup />,
                     errorElement: <FourOFour />
                },
+               {
+                    path: "signup",
+                    element: <SignUp />,
+                    errorElement: <FourOFour />
+               },
                // {
                //      path: "/accounts",
                //      element: <AccountPage />

@@ -42,6 +42,7 @@ function UserAddress() {
     .then((data)=>{
       Cookies.remove('user_data');
       Cookies.set('user_data', JSON.stringify(data.user), { expires: 2 });
+      // document.cookie = `user_data=${JSON.stringify(data.user)};max-age=172800`
       window.location.reload();
     })
     .then(()=>{
