@@ -6,6 +6,8 @@ import Demo_cars from '../components/demo_car_home';
 import CarSlider from "../components/CarSlider";
 import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { deleteUser } from "../user/userconfig";
+import Cookies from "js-cookie";
 
 const HomeBody = () => {
   const location = useLocation()
@@ -20,6 +22,9 @@ const HomeBody = () => {
     navigate('/result', { state: data })
   }
   if(location.state!==null){
+    if(location.state.userCookie){
+      Cookies.remove(location.state.userCookie)
+    }
     if(location.state.showToast){
       toast.success("Sucessfully logged in")
     }

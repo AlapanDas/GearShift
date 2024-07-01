@@ -40,7 +40,6 @@ export default function Login() {
                          let user_data = data.user;
                          updatelogin(true);
                          setUser(user_data);
-
                          Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
                          // toast.success("Succesfully Logged In")
                          navigate('/',{state : {showToast : true}})

@@ -6,8 +6,7 @@ import DarkModeToggle from './darkToggler'
 import Button from './Button';
 import Cookies from 'js-cookie';
 import { useSelector, useDispatch } from 'react-redux';
-import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig'
-
+import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig';
 
 const Header = () => {
   // const navigate=useNavigate();
@@ -82,7 +81,7 @@ const Header = () => {
                 </li>
               ))
             }
-            {setlogin ?
+            {user.isLoggedIn ?
               <a className='' href="/accounts">
                 <Button>
                   {user.fullname || userObject.username}
