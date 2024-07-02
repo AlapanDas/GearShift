@@ -14,7 +14,7 @@ const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Car Service", link: "/" },
+    { name: "Car Service", link: "/services" },
     { name: "Contact", link: "/" },
   ];
   const dispatch = useDispatch();
