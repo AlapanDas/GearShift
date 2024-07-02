@@ -6,6 +6,7 @@ import CardPage from './pages/CardPage';
 import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
 import About from './pages/About';
+import Services from './pages/Services';
 import SignUp from './components/SignUp';
 import App from './App';
 import { Children } from 'react';
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
                {
                     path: "about",
                     element: <About />,
+                    errorElement: <FourOFour />
+               },
+               {
+                    path: "services",
+                    element: <Services />,
                     errorElement: <FourOFour />
                },
                {

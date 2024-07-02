@@ -13,6 +13,7 @@ import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
 import About from './pages/About';
 import Result from './pages/Result';
+import Services from './pages/Services';
 
 
 
@@ -53,6 +54,10 @@ function App() {
           <Route
             path='/about'
             element={<About />}
+          ></Route>
+          <Route
+            path='/services'
+            element={<Services />}
           ></Route>
           <Route
             path="/result"
