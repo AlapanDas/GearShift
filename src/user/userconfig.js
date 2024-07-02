@@ -73,6 +73,7 @@ const userSlice = createSlice({
             state.pincode = action.payload.pincode;
             state.state = action.payload.state;
         },
+        
     }
 });
 
@@ -88,7 +89,9 @@ export const {
     setPincode,
     setOrders,
     setUser,
-    deleteUser
+    deleteUser,
 } = userSlice.actions;
+
+
 
 export default userSlice.reducer;

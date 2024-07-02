@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React,{useState} from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -17,6 +17,12 @@ import Result from './pages/Result';
 
 
 function App() {
+
+  // const [currentPath, setCurrentPath] = useState('');
+
+  // const handlePathChange = (path) => {
+  //   setCurrentPath(path);
+  // };
 
   return (
     <>
