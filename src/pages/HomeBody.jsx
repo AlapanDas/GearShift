@@ -26,6 +26,9 @@ const HomeBody = () => {
     if(location.state.showToastSignUp){
       toast.success("Sucessfully signed up")
     }
+    if(location.state.msg){
+      toast.success(location.state.msg)
+    }
     // if(location.state.isUserlogin){
     //   toast.success("Sucessfully logged in")
     // }

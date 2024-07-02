@@ -1,16 +1,20 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Cookies from 'js-cookie';
+import { useLocation, useNavigate } from "react-router-dom";
+import { setAddress, setCity, setPincode, setState } from "../../user/userconfig";
 
-
-function UserAddress() {
+function UserAddress(props) {
   const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
   const [show, setshow] = React.useState(false);
+  // console.log(user)
   function change() {
     setshow(true);
   }
-  console.log(user);
-
+  // console.log(update)
   async function handleChange(event){
     event.preventDefault()
     const secret=Cookies.get('user_data');
@@ -23,7 +27,6 @@ function UserAddress() {
     // console.log(city)
     // console.log(state)
     // console.log(zip)
-    
     
     fetch('https://gearshift-backend.onrender.com/user/update_details',{
       method:'POST',
@@ -43,8 +46,17 @@ function UserAddress() {
     .then((data)=>{
       Cookies.remove('user_data');
       Cookies.set('user_data', JSON.stringify(data.user), { expires: 2 });
+      const update_data = JSON.parse(atob(JSON.parse(JSON.stringify(data.user)).split('.')[1]))
+      console.log(update_data)
+      dispatch(setAddress(update_data.address))
+      dispatch(setCity(update_data.city))
+      dispatch(setPincode(update_data.pincode))
+      dispatch(setState(update_data.state))
+
       // document.cookie = `user_data=${JSON.stringify(data.user)};max-age=172800`
-      window.location.reload();
+      // window.location.reload();
+      props.notification("Address updated successfully")
+      // navigate("/accounts",{state:{msg:"Address updated successfully"}})
     })
     .then(()=>{
       setshow(false)
@@ -52,8 +64,15 @@ function UserAddress() {
     .catch((error)=>{
       console.log("error:",error)
     });
-
   }
+
+  useEffect(() => {
+      // if (location.state!==null && location.state.msg) {
+      //   toast.success(location.state.msg);
+        
+      // }
+      console.log("rendering")
+    }, [location.pathname]);
 
   return (
     <div className="py-20 px-4 my-4 rounded-2xl mx-5 max-sm:mx-7 bg-onprimary dark:bg-darkbg">
