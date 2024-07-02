@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, BrowserRouter as Router } from 'react-router-dom';
+import { Link, BrowserRouter as Router,useLocation } from 'react-router-dom';
 // import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 import DarkModeToggle from './darkToggler'
@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig'
 
 
-const Header = () => {
+const Header = ({onPathChange}) => {
   // const navigate=useNavigate();
   let Links = [
     { name: "Home", link: "/" },
@@ -17,6 +17,7 @@ const Header = () => {
     { name: "Car Service", link: "/" },
     { name: "Contact", link: "/" },
   ];
+  const location = useLocation();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   let [open, setOpen] = useState(false);
@@ -34,7 +35,11 @@ const Header = () => {
     dispatch(setPincode(user_data.pincode));
     dispatch(setState(user_data.state));
   }
-
+   
+  // console.log("khankir chele")
+  // useEffect(() => {
+  //   onPathChange(location.pathname);
+  // }, [location, onPathChange]);
 
   useEffect(() => {
     const userCookie = Cookies.get('user_data');
@@ -55,7 +60,7 @@ const Header = () => {
         //Cookie, Redux not found 
         updatelogin(false);
     }
-  }, []);
+  }, [location.pathname]);
 
 
   return (
@@ -82,13 +87,13 @@ const Header = () => {
               ))
             }
             {setlogin ?
-              <Link className='' to="/accounts">
+              <Link onClick={() => setOpen(!open)} className='' to="/accounts">
                 <Button>
                   {user.fullname || user.username}
                 </Button>
               </Link>
               :
-              <Link className='' to="/login">
+              <Link onClick={() => setOpen(!open)} className='' to="/login">
                 <Button>
                   Sign Up / Login
                 </Button>
