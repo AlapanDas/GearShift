@@ -7,6 +7,7 @@ import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
 import About from './pages/About';
 import Services from './pages/Services';
+import SignUp from './components/SignUp';
 import App from './App';
 import { Children } from 'react';
 
@@ -26,14 +27,19 @@ const router = createBrowserRouter([
                     element: <LoginSignup />,
                     errorElement: <FourOFour />
                },
+               {
+                    path: "signup",
+                    element: <SignUp />,
+                    errorElement: <FourOFour />
+               },
                // {
                //      path: "/accounts",
                //      element: <AccountPage />
                // },
-               // {
-               //      path: "/signin",
-               //      element: <SignUp />
-               // },
+               {
+                    path: "/signup",
+                    element: <SignUp />
+               },
                {
                     path: "accounts",
                     element: <AccountPage />,

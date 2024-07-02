@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import AccountPage from './AccountPage';
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import Cookies from 'js-cookie';
 import { setUser } from '../user/userconfig'
+import { Link } from 'react-router-dom';
 
 
 
@@ -43,7 +44,7 @@ function LoginSignup() {
             <Login />}
         </div>
       }
-      <a href="/signup"><div className="text-center py-1 text-primary dark:text-onprimary mx-auto md:flex-row justify-center bg-onprimary dark:bg-primary">Don't have an account? Create One !!</div></a>
+      <div className="text-center text-lg py-1 text-primary dark:text-onprimary mx-auto md:flex-row justify-center bg-onprimary dark:bg-primary">Don't have an account? <Link to="/signup" className=' font-semibold text-notif dark:text-onprimary'>Create One !!</Link></div>
     </>
   )
 }

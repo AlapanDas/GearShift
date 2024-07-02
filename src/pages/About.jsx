@@ -49,7 +49,7 @@ const About = () => {
       <h2 className="text-6xl text-center mt-[50px]">Our Team</h2>
       <div id="container" className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-16">
         <div className="member flex flex-col items-center h-[400px] pt-12">
-          <img src={User_img} alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
+          <img src="https://github.com/AlapanDas.png" alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
           <div className="info flex flex-col items-center justify-center mt-10">
           <h4 className='text-2xl'>Alapan Das</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
@@ -60,7 +60,7 @@ const About = () => {
           </div>
         </div>
         <div className="member flex flex-col items-center h-[400px] pt-12">
-          <img src={User_img} alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
+          <img src="https://github.com/anistdnt.png" alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
           <div className="info flex flex-col items-center justify-center mt-10">
           <h4 className='text-2xl'>Aniruddha Mukherjee</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
@@ -71,7 +71,7 @@ const About = () => {
           </div>
         </div>
         <div className="member flex flex-col items-center h-[400px] pt-12">
-          <img src={User_img} alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
+          <img src="https://github.com/itzarkabrata.png" alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
           <div className="info flex flex-col items-center justify-center mt-10">
           <h4 className='text-2xl'>Arkabrata Chandra</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
@@ -82,7 +82,7 @@ const About = () => {
           </div>
         </div>
         <div className="member flex flex-col items-center h-[400px] pt-12">
-          <img src={User_img} alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
+          <img src="https://github.com/Appy-007.png" alt="profile" className='h-[150px] w-[150px] rounded-full shadow-custom dark:shadow-[#999797] z-20'/>
           <div className="info flex flex-col items-center justify-center mt-10">
           <h4 className='text-2xl'>Apratim Raha</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
