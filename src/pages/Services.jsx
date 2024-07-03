@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import TireRotation_img from "../assets/images/tire-rotations.jpg";
 import Diagnostics_img from "../assets/images/diagnostics.jpg";
 import EngineService_img from "../assets/images/engine-service.jpg";
+import { toast } from "react-toastify";
 
 
 // async function handleMail(event){
@@ -53,6 +54,7 @@ function Services() {
         },
       );
 
+      toast.success("Mail sent successfully")
       e.target.reset();
   };
 
