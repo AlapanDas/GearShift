@@ -9,14 +9,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setAddress, setCity, setEmail, setFullname, setLogin, setNumber, setOrders, setPincode, setState, setUsername } from '../user/userconfig';
 
 const Header = () => {
-  const location = useLocation();
   // const navigate=useNavigate();
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Car Service", link: "/" },
+    { name: "Car Service", link: "/services" },
     { name: "Contact", link: "/" },
   ];
+  const location = useLocation();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   let [open, setOpen] = useState(false);
@@ -34,7 +34,6 @@ const Header = () => {
     dispatch(setPincode(user_data.pincode));
     dispatch(setState(user_data.state));
   }
-
 
   useEffect(() => {
     const userCookie = Cookies.get('user_data');
@@ -82,13 +81,13 @@ const Header = () => {
               ))
             }
             {setlogin ?
-              <Link className='' to="/accounts">
+              <Link onClick={() => setOpen(!open)} className='' to="/accounts">
                 <Button>
                   {user.fullname || user.username}
                 </Button>
               </Link>
               :
-              <Link className='' to="/login">
+              <Link onClick={() => setOpen(!open)} className='' to="/login">
                 <Button>
                   Sign Up / Login
                 </Button>

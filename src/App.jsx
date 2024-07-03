@@ -13,10 +13,17 @@ import AccountPage from './pages/AccountPage';
 import FourOFour from './pages/FourOFour';
 import About from './pages/About';
 import Result from './pages/Result';
+import Services from './pages/Services';
 
 
 
 function App() {
+
+  // const [currentPath, setCurrentPath] = useState('');
+
+  // const handlePathChange = (path) => {
+  //   setCurrentPath(path);
+  // };
 
   return (
     <>
@@ -43,6 +50,9 @@ function App() {
             <Route
               path="result"
               element={<Result />} />
+            <Route
+              path="services"
+              element={<Services />} />
             <Route
               path='*'
               element={<FourOFour />} />
