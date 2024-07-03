@@ -10,7 +10,7 @@ import { deleteUser } from "../user/userconfig";
 import Cookies from "js-cookie";
 
 const HomeBody = () => {
-  const location = useLocation()
+  const location = useLocation();
   const navigate=useNavigate();
   const [searchResult, setResult] = useState([])
  const SpinAtClick = (allow)=>{
@@ -21,9 +21,10 @@ const HomeBody = () => {
     setResult(data)
     navigate('/result', { state: data })
   }
+
   if(location.state!==null){
-    if(location.state.userCookie){
-      Cookies.remove(location.state.userCookie)
+    if(location.state.msg){
+      toast.success(location.state.msg)
     }
     if(location.state.showToast){
       toast.success("Sucessfully logged in")
@@ -31,11 +32,8 @@ const HomeBody = () => {
     if(location.state.showToastSignUp){
       toast.success("Sucessfully signed up")
     }
-    // if(location.state.isUserlogin){
-    //   toast.success("Sucessfully logged in")
-    // }
   }
-
+  
 
   return (
     <>

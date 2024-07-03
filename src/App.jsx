@@ -1,8 +1,8 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import router from './router';
 import { RouterProvider } from "react-router-dom";
 import HomeBody from './pages/HomeBody';
@@ -22,42 +22,32 @@ function App() {
     <>
       {/* <RouterProvider router={router} /> */}
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route
-            path="/"
-            element={<HomeBody />}
-          ></Route>
-          <Route
-            path="/cards"
-            element={<CardPage />}
-          ></Route>
-          <Route
-            path="/login"
-            element={<LoginSignup />}
-          ></Route>
-          <Route
-            path="/signup"
-            element={<SignUp />}
-          ></Route>
-          <Route
-            path="/accounts"
-            element={<AccountPage />}
-          ></Route>
-          <Route
-            path='/about'
-            element={<About />}
-          ></Route>
-          <Route
-            path="/result"
-            element={<Result />}
-          ></Route>
-          <Route
-            path='*'
-            element={<FourOFour />}
-          >
-          </Route>
+          <Route path="/" element={<Header/>}>
+            <Route index element={<HomeBody/>}/>
+            <Route
+              path="cards"
+              element={<CardPage />} />
+            <Route
+              path="login"
+              element={<LoginSignup />} />
+            <Route
+              path="signup"
+              element={<SignUp />} />
+            <Route
+              path="accounts"
+              element={<AccountPage />} />
+            <Route
+              path='about'
+              element={<About />} />
+            <Route
+              path="result"
+              element={<Result />} />
+            <Route
+              path='*'
+              element={<FourOFour />} />
 
+          </Route>
         </Routes>
 
         <Footer />

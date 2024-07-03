@@ -41,7 +41,6 @@ export default function Login() {
                          updatelogin(true);
                          setUser(user_data);
                          Cookies.set('user_data', JSON.stringify(user_data), { expires: 2 });
-                         // toast.success("Succesfully Logged In")
                          navigate('/',{state : {showToast : true,isUserlogin : true}})
                     }else{
                          updatelogin(false);

@@ -1,6 +1,6 @@
 import Cookies from "js-cookie";
 import React from "react";
-
+import { useDispatch } from "react-redux";
 import { deleteUser } from "../../user/userconfig";
 import user_img from "../../assets/images/user_profile.png";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function Logout() {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   function deleteuser() {
     const secret=Cookies.get('user_data');
     fetch('https://gearshift-backend.onrender.com/user/delete', {
@@ -25,16 +25,15 @@ function Logout() {
   
   function logout() {
     try {
-      deleteUser()
-      navigate("/",{state : {userCookie : "user_data"}})
-      // deleteUser();
-      // console.log("Hello")
-      // Cookies.remove('user_data');
+      dispatch(deleteUser());
+      Cookies.remove('user_data');
+      navigate("/",{state : {msg : "Logged out"}})
     }
     catch {
       console.log("Something wrong")
-     }
+    }
   }
+
   return (
     <div className="flex  flex-1 flex-col  px-4  py-12 my-4  lg:px-8 rounded-2xl mx-5 mb-5 max-sm:mx-7 bg-onprimary dark:bg-darkbg">
       <h3 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">Your Account</h3>
