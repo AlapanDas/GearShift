@@ -6,10 +6,13 @@ import { setUser } from '../user/userconfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import Spinner from './Spinner';
 
 
 export default function Login() {
      const [setlogin, updatelogin] = useState(false)
+     const [spin,setSpin] = useState(false);
+
      const navigate = useNavigate();
      const [showPasswordSignIn, setShowPasswordSignIn] = useState(false);
      const [showPasswordSignUp, setShowPasswordSignUp] = useState(false);
@@ -22,6 +25,8 @@ export default function Login() {
      async function login() {
           const username = document.getElementById('name-login').value;
           const password = document.getElementById('password-login').value;
+
+          setSpin(true)
 
           fetch('https://gearshift-backend.onrender.com/user/login', {
                method: 'POST',
@@ -36,6 +41,7 @@ export default function Login() {
           })
                .then((response) => response.json())
                .then((data) => { 
+                    setSpin(false);
                     if (data.status){
                          let user_data = data.user;
                          updatelogin(true);
@@ -131,6 +137,7 @@ export default function Login() {
                          </div>
                     </div>
                </div>
+               {spin && <Spinner/>}
           </>
      )
 }
