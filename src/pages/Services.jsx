@@ -1,34 +1,61 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from '@emailjs/browser';
 import TireRotation_img from "../assets/images/tire-rotations.jpg";
 import Diagnostics_img from "../assets/images/diagnostics.jpg";
 import EngineService_img from "../assets/images/engine-service.jpg";
 
 
-async function handleMail(event){
-  event.preventDefault();
-  const email=document.getElementById("email").value;
-  const service=document.getElementById("service").value;
-  const about=document.getElementById("about").value;
+// async function handleMail(event){
+//   event.preventDefault();
+//   const email=document.getElementById("email").value;
+//   const service=document.getElementById("service").value;
+//   const about=document.getElementById("about").value;
 
-  fetch('https://gearshift-backend.onrender.com/user/send_email',{
-    method:'POST',
-      headers: {
-        'Content-Type': 'application/json',
-   },
-   body: JSON.stringify({
-    email: email,
-    service:service,
-    about:about
-   }),
-   credentials: 'include',
-  })
-  .then((response) => response.json()
-  ).catch((error)=>{
-    console.log("error:",error)
-  });
-}
+//   fetch('https://gearshift-backend.onrender.com/user/send_email',{
+//     method:'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//    },
+//    body: JSON.stringify({
+//     email: email,
+//     service:service,
+//     about:about
+//    }),
+//    credentials: 'include',
+//   })
+//   .then((response) => response.json()
+//   ).catch((error)=>{
+//     console.log("error:",error)
+//   });
+// }
 
 function Services() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_x2lmjjm', 'template_1nlnzah', form.current, {
+        publicKey: 'AJdpa--PdSP1yDDbb',
+        limitRate: {
+          throttle: 10000,
+        },
+      },
+    )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+
+      e.target.reset();
+  };
+
   return (
     <div className=" pt-14 px-8 flex flex-col justify-center items-center dark:bg-black dark:text-white">
       <div>
@@ -107,23 +134,42 @@ function Services() {
           Fill the form to reach us
         </h2>
       </div>
-      <form onSubmit={handleMail}>
-        <div className="space-y-12">
+      <form ref={form} onSubmit={sendEmail}>
+        <div className="space-y-12 bg-[#eaeaea7e] dark:bg-[#3d41416a] pt-10 rounded-lg shadow-custom mb-8 px-10">
           <div className="border-b border-gray-900/10 pb-12">
+            
+          <div className="sm:col-span-4">
+              <label
+                htmlFor="name"
+                className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900 "
+              >
+                Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  name="from_name"
+                  type="text"
+                  autoComplete="name"
+                  className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:border-[1px] focus:border-btncol sm:text-sm sm:leading-6 dark:text-black"
+                />
+              </div>
+            </div>
+            
             <div className="sm:col-span-4">
               <label
                 htmlFor="email"
-                className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900 "
+                className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900 mt-8 "
               >
                 Email address
               </label>
               <div className="mt-2">
                 <input
                   id="email"
-                  name="email"
+                  name="from_email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:text-black"
+                  className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6 dark:text-black focus:outline-none focus:border-[1px] focus:border-btncol"
                 />
               </div>
             </div>
@@ -131,17 +177,18 @@ function Services() {
             <div className="sm:col-span-3">
               <label
                 htmlFor="service"
-                className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900"
+                className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900 mt-8"
               >
                 Service
               </label>
               <div className="mt-2">
                 <select
                   id="service"
-                  name="service"
+                  name="user_service"
                   autoComplete="service-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 dark:text-black"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:border-[1px] focus:border-btncol sm:max-w-xs sm:text-sm sm:leading-6 dark:text-black pl-3"
                 >
+                  <option>Select</option>
                   <option>Tyre rotation</option>
                   <option>Engine services</option>
                   <option>Car diagnostics</option>
@@ -151,16 +198,16 @@ function Services() {
               <div className="col-span-full">
                 <label
                   htmlFor="about"
-                  className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900"
+                  className="block text-lg max-sm:text-sm font-medium leading-6 text-gray-900 mt-8"
                 >
                   About
                 </label>
                 <div className="mt-2">
                   <textarea
                     id="about"
-                    name="about"
+                    name="message"
                     rows={5}
-                    className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:text-black"
+                    className="block w-full rounded-md border-0 py-1.5 px-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:border-[1px] focus:border-btncol sm:text-sm sm:leading-6 dark:text-black"
                     defaultValue={""}
                   />
                 </div>
@@ -174,13 +221,13 @@ function Services() {
             <div className="mt-6 flex items-center justify-end gap-x-6">
               <button
                 type="button"
-                className="text-sm font-semibold leading-6 text-gray-900 rounded-md px-3 py-2 dark:text-white dark:bg-gray "
+                className="text-sm font-semibold leading-6 text-gray-900 rounded-md px-3 py-2 bg-darkbg text-white dark:text-black dark:bg-btncol "
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="rounded-md  px-3 py-2 text-sm font-semibold text-black shadow-sm   dark:text-white dark:bg-gray"
+                className="rounded-md  px-3 py-2 text-sm font-semibold shadow-sm bg-darkbg text-white dark:text-black dark:bg-btncol"
               >
                 Send
               </button>
