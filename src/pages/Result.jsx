@@ -28,7 +28,7 @@ export default function Result(Params) {
                          {spin ? 
                          <div className=' flex flex-col justify-center items-center'>
                               <img src={Loader} alt="loading" className=' h-72 w-72 -mt-5'/>
-                              <p className='mt-1 font-semibold text-xl'>Loading</p>
+                              <p className='mt-1 font-semibold text-xl dark:text-white'>Loading</p>
                          </div>
                          : 
                          <div>

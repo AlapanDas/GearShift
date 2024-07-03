@@ -6,9 +6,11 @@ import Demo_cars from '../components/demo_car_home';
 import CarSlider from "../components/CarSlider";
 import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { deleteUser } from "../user/userconfig";
+import Cookies from "js-cookie";
 
 const HomeBody = () => {
-  const location = useLocation()
+  const location = useLocation();
   const navigate=useNavigate();
   const [searchResult, setResult] = useState([])
  const SpinAtClick = (allow)=>{
@@ -19,21 +21,19 @@ const HomeBody = () => {
     setResult(data)
     navigate('/result', { state: data })
   }
+
   if(location.state!==null){
+    if(location.state.msg){
+      toast.success(location.state.msg)
+    }
     if(location.state.showToast){
       toast.success("Sucessfully logged in")
     }
     if(location.state.showToastSignUp){
       toast.success("Sucessfully signed up")
     }
-    if(location.state.msg){
-      toast.success(location.state.msg)
-    }
-    // if(location.state.isUserlogin){
-    //   toast.success("Sucessfully logged in")
-    // }
   }
-
+  
 
   return (
     <>
