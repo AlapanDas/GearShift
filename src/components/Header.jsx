@@ -14,7 +14,6 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
     { name: "Car Service", link: "/services" },
-    { name: "Contact", link: "/" },
   ];
   const location = useLocation();
   const dispatch = useDispatch();
@@ -72,7 +71,7 @@ const Header = () => {
           <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer lg:hidden'>
             <i className={open ? 'fa-solid fa-x text-md dark:text-white' : 'fa-solid fa-bars dark:text-white'}></i>
           </div>
-          <ul className={`max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18' : 'top-[-490px]'}`}>
+          <ul className={`max-lg:mt-5 max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18' : 'top-[-490px]'}`}>
             {
               Links.map((link) => (
                 <li onClick={() => setOpen(!open)} key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
