@@ -14,6 +14,8 @@ import FourOFour from './pages/FourOFour';
 import About from './pages/About';
 import Result from './pages/Result';
 import Services from './pages/Services';
+import Cart from './pages/Cart';
+import Payment from './pages/payment'
 
 
 
@@ -53,6 +55,12 @@ function App() {
             <Route
               path="services"
               element={<Services />} />
+            <Route
+              path="cart"
+              element={<Cart />} />
+              <Route
+              path="payment"
+              element={<Payment />} />
             <Route
               path='*'
               element={<FourOFour />} />

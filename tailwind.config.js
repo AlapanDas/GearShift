@@ -37,6 +37,15 @@ module.exports = {
       borderRadius: {
         'custom': '30px',
       },
+      backgroundColor: {
+        'transparent': 'transparent',
+      },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['focus'],
+      borderColor: ['focus'],
     },
   },
   plugins: [],

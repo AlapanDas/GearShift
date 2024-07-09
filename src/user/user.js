@@ -1,5 +1,5 @@
 class User {
-    constructor(isloggedIn = false, username = '', password = '', fullname = '', email = '', number = null, address = '', state = '', city = '', pincode = null, orders = []) {
+    constructor(isloggedIn = false, username = '', password = '', fullname = '', email = '', number = null, address = '', state = '', city = '', pincode = null, orders = [],wishList = []) {
         this.isloggedIn=isloggedIn
         this.username = username;
         this.password = password;
@@ -11,6 +11,7 @@ class User {
         this.city = city;
         this.pincode = pincode;
         this.orders = orders;
+        this.wishList = wishList;
     }
 
     setLogin(flag){
@@ -54,6 +55,10 @@ class User {
 
     setOrders(orders) {
         this.orders = orders;
+    }
+
+    setWishList(wishList) {
+        this.wishList = wishList;
     }
 }
 

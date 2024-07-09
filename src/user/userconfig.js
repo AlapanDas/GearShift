@@ -12,6 +12,7 @@ const initialState = {
     city: '',
     pincode: null,
     orders: [],
+    wishList: [],
     number: null,
 };
 
@@ -49,6 +50,9 @@ const userSlice = createSlice({
         setOrders: (state, action) => {
             state.orders = action.payload;
         },
+        setWishList: (state, action) => {
+            state.wishList.push(action.payload);
+        },
         deleteUser(state){
             state.isLoggedIn = false;
             state.username = ""
@@ -58,6 +62,7 @@ const userSlice = createSlice({
             state.email = ""
             state.number = null
             state.orders = ""
+            state.wishList = ""
             state.pincode = null
             state.state = ""
         },
@@ -70,6 +75,7 @@ const userSlice = createSlice({
             state.email = action.payload.email;
             state.number = action.payload.number;
             state.orders = action.payload.orders;
+            state.wishList = action.payload.wishList;
             state.pincode = action.payload.pincode;
             state.state = action.payload.state;
         },
@@ -88,6 +94,7 @@ export const {
     setCity,
     setPincode,
     setOrders,
+    setWishList,
     setUser,
     deleteUser,
 } = userSlice.actions;
