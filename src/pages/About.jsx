@@ -54,8 +54,8 @@ const About = () => {
           <h4 className='text-2xl'>Alapan Das</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
           <div className="socials flex items-center justify-around mt-4 w-32 h-10">
-            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/alapandas3/"><i class="fa-brands fa-linkedin"></i></a>
-            <a target='_blank' className='text-2xl' href="https://github.com/AlapanDas"><i class="fa-brands fa-github"></i></a>
+            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/alapandas3/"><i className="fa-brands fa-linkedin"></i></a>
+            <a target='_blank' className='text-2xl' href="https://github.com/AlapanDas"><i className="fa-brands fa-github"></i></a>
           </div>
           </div>
         </div>
@@ -65,8 +65,8 @@ const About = () => {
           <h4 className='text-2xl'>Aniruddha Mukherjee</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
           <div className="socials flex items-center justify-around mt-4 w-32 h-10">
-            <a target='_blank' className='text-2xl text-[rgb(0,119,181)] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/aniruddha-mukherjee-140840232/"><i class="fa-brands fa-linkedin"></i></a>
-            <a target='_blank' className='text-2xl' href="https://github.com/anistdnt"><i class="fa-brands fa-github"></i></a>
+            <a target='_blank' className='text-2xl text-[rgb(0,119,181)] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/aniruddha-mukherjee-140840232/"><i className="fa-brands fa-linkedin"></i></a>
+            <a target='_blank' className='text-2xl' href="https://github.com/anistdnt"><i className="fa-brands fa-github"></i></a>
           </div>
           </div>
         </div>
@@ -76,8 +76,8 @@ const About = () => {
           <h4 className='text-2xl'>Arkabrata Chandra</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
           <div className="socials flex items-center justify-around mt-4 w-32 h-10">
-            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/arkabrata-chandra-a26a61257/"><i class="fa-brands fa-linkedin"></i></a>
-            <a target='_blank' className='text-2xl' href="https://github.com/itzarkabrata"><i class="fa-brands fa-github"></i></a>
+            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/arkabrata-chandra-a26a61257/"><i className="fa-brands fa-linkedin"></i></a>
+            <a target='_blank' className='text-2xl' href="https://github.com/itzarkabrata"><i className="fa-brands fa-github"></i></a>
           </div>
           </div>
         </div>
@@ -87,8 +87,8 @@ const About = () => {
           <h4 className='text-2xl'>Apratim Raha</h4>
           <p className='mt-4 text-lg font-bold text-[#686767]'>Developer</p>
           <div className="socials flex items-center justify-around mt-4 w-32 h-10">
-            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/apratim-raha-1948a1245?trk=contact-info"><i class="fa-brands fa-linkedin"></i></a>
-            <a target='_blank' className='text-2xl' href="https://github.com/Appy-007"><i class="fa-brands fa-github"></i></a>
+            <a target='_blank' className='text-2xl text-[#0077B5] lg:hover:text-black lg:dark:hover:text-white' href="https://www.linkedin.com/in/apratim-raha-1948a1245?trk=contact-info"><i className="fa-brands fa-linkedin"></i></a>
+            <a target='_blank' className='text-2xl' href="https://github.com/Appy-007"><i className="fa-brands fa-github"></i></a>
           </div>
           </div>
         </div>

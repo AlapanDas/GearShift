@@ -2,12 +2,16 @@ import { useState } from 'react'
 import brand from '../assets/images/brand.svg'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
-
-
+import {useSelector, useDispatch} from 'react-redux'
+import { setWishList } from '../user/userconfig'
 
 export default function Card({ Data }) {
+     const user = useSelector((state) => state.user);
+     const dispatch = useDispatch()
      let [isOpen, setIsOpen] = useState(false)
      const carData = Data;
+
+     // console.log(user)
      return (
           <button onClick={() => setIsOpen(true)}>
                <div>
@@ -52,7 +56,7 @@ export default function Card({ Data }) {
 
                                                             <button className='rounded-xl text-notif border backdrop-blur-sm mt-2  px-4 py-2 text-lg font-bold' onClick={() => setIsOpen(false)}>BUY</button>
 
-                                                            <button className='rounded-xl   text-alert border backdrop-blur-sm mt-2  px-4 py-2 text-lg font-bold' onClick={() => setIsOpen(false)}>ADD</button>
+                                                            <button className='rounded-xl   text-alert border backdrop-blur-sm mt-2  px-4 py-2 text-lg font-bold' onClick={() => {setIsOpen(false); dispatch(setWishList(Data))}}>ADD</button>
 
                                                        </div>
                                                   </div>

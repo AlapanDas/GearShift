@@ -74,7 +74,7 @@ const Header = () => {
           <ul className={`max-lg:mt-5 max-lg:bg-[#bebebe9a] backdrop-blur-lg lg:flex  lg:items-center max-lg:shadow-lg lg:pb-0 pb-12 absolute lg:static lg:z-50 left-0 w-full lg:w-auto lg:pl-0 pl-9 transition ease-in-out duration-150 z-50 dark:bg-gray dark:max-lg:bg-[#656464c4] ${open ? 'top-18' : 'top-[-490px]'}`}>
             {
               Links.map((link) => (
-                <li onClick={() => setOpen(!open)} key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 hover:text-notif dark:text-white dark:hover:text-onprimary'>
+                <li onClick={() => setOpen(!open)} key={link.name} className='lg:ml-8 text-xl lg:my-0 my-7 lg:hover:text-notif dark:text-white dark:hover:text-onprimary'>
                   <Link to={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</Link>
                 </li>
               ))
@@ -93,6 +93,7 @@ const Header = () => {
               </Link>
             }
 
+            <Link to="/cart" onClick={() => setOpen(!open)}><div className='text-2xl max-lg:text-3xl lg:ml-5 max-lg:mt-3 dark:text-white'><i className="fa-solid fa-cart-shopping"></i></div></Link>
             <div onClick={() => setOpen(!open)}><DarkModeToggle /></div>
           </ul>
         </div>
